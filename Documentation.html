@@ -4,9 +4,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
-		header { height:72px; width:100%; position:fixed; top:0; left:0; background-color:#009688; color:#ffffff; }
+		input::-webkit-calendar-picker-indicator {display:none;}
+		header { width:100%; position:fixed; top:0; left:0; background-color:#009688; color:#ffffff; }
 		h1 { font-size: 24px; }
-		footer { background-color:#004D40; }
+		#footer { background-color:#004D40; }
 		#openNav { vertical-align:middle; height:52px; margin-top:10px; margin-bottom:10px; width:52px; background-color:#009688; color:#ffffff }
 		#openNav:focus { outline:0; }
 		#openNav:hover { box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5); }
@@ -14,13 +15,17 @@
 		#closeSidebar { text-align:center; position:fixed; bottom:0; background-color:#E0E0E0; }
 		#headerTitle { vertical-align:middle; }
 		#tableHeader { background-color:#00695C; color:#ffffff; }
-		
+		#searchbox { width:320px; }
+		#searchbox:focus { outline:0; }
 		.tab { padding-left: 2em; }
 		.tab2 { padding-left: 4em; }
 		.tab3 { padding-left: 6em; }
+		.buttonlist { text-decoration: underline; border:0; background-color:transparent; cursor:pointer; }
+		.buttonlist:focus { outline:0; }
 	</style>
 	<script>
 		var sidebarWidth = "240px";
+		var mobilew = 601;
 		function w3_toggleOpen(){
 			if(document.getElementById("sideMenu").style.display == "none"){
 				w3_open();
@@ -30,13 +35,14 @@
 		}
 		
 		function w3_open() {
-			if(window.innerWidth < 800){
+			if(window.innerWidth < mobilew){
 				document.getElementById("sideMenu").style.width = "100%";
 				document.getElementById("closeSidebar").style.width = "100%";
 			}else{
 				document.getElementById("sideMenu").style.width = sidebarWidth;
 				document.getElementById("closeSidebar").style.width = sidebarWidth;
 				document.getElementById("main").style.marginLeft = sidebarWidth;
+				document.getElementById("footer").style.marginLeft = sidebarWidth;
 			}
 			document.getElementById("sideMenu").style.display = "block";
 		}
@@ -44,36 +50,103 @@
 		function w3_close() {
 			document.getElementById("sideMenu").style.display = "none";
 			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("footer").style.marginLeft = "0";
 		}
 		
-		function loadSidebar(){
-			if(window.innerWidth < 800){
-				document.getElementById("sideMenu").style.display = "none";
+		function loadFunc(){
+			// SIDEBAR
+			if(window.innerWidth < mobilew){
+				w3_close();
 			}else{
 				w3_open();
 			}
+			
+			// HEADER
+			if(window.innerWidth < mobilew){
+				document.getElementById("openNav").className += " w3-display-topleft";
+				document.getElementById("searchbox").className += " w3-display-bottommiddle";
+				document.getElementById("headerin").style = "height:110px;";
+				document.getElementById("headerSeparator").style = "height:110px;";
+			}else{
+				document.getElementById("openNav").className += " w3-display-left";
+				document.getElementById("searchbox").className += " w3-display-right";
+				document.getElementById("headerin").style = "height:72px;";
+				document.getElementById("headerSeparator").style = "height:72px;";
+			}
+			
 		}
+		
+		function gotoRef(ref){
+			window.location.href = ref;
+			if(window.innerWidth < mobilew){
+				window.scrollBy(0, -110);
+			}else{
+				window.scrollBy(0, -72);
+			}
+		}
+		
+		function setSearchboxItems(){
+			if(event.key === 'Enter') {
+				gotoRef("#"+document.getElementById("searchbox").value+"ref");
+			}
+			
+			if(document.getElementById("searchbox").value.length>1){
+				if(document.getElementById("searchlist").innerHTML.length==0){
+					var itsearch = ["accordion", "dropdown", "hbox", "modal", "radiogroup", "sidebar", "tabbedbox", "table", "vbox",
+					"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video"];
+					var toappend = "";
+					for(var i=0; i<itsearch.length; i++){
+						toappend += "<option value="+itsearch[i]+">"
+					}
+					document.getElementById("searchlist").innerHTML = toappend;
+				}
+			}else{
+				document.getElementById("searchlist").innerHTML = "";
+			}
+		}
+		
 	</script>
 </head>
-<body onload="loadSidebar()">
+<body onload="loadFunc()" onresize="loadFunc()">
 	
 	<!-- HEADER -------------------------------------------------------------------------------->
-	<header class="w3-container w3-cell-row">
-		<button id="openNav" class="w3-button w3-xlarge w3-cell w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
-		<h1 id="headerTitle" class="w3-cell">WPL Documentation Pages</h1>
+	<header>
+		<div id="headerin" class="w3-display-container">
+			<button id="openNav" class="w3-button w3-xlarge w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
+			<h1 id="headerTitle" class="w3-display-middle">WPL Documentation Pages</h1>
+			<input class="w3-input w3-padding" list="searchlist" placeholder="Search.." id="searchbox" onkeyup="setSearchboxItems()">
+			<datalist id="searchlist"></datalist>
+		</div>
 	</header>
-	<div style="height:72px"></div>
+	<div id="headerSeparator"></div>
 
 	<!-- SIDEBAR ------------------------------------------------------------------------------->
-	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" position:fixed; top:72px;" id="sideMenu">
+	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="sideMenu">
 		<h4 class="w3-bar-item">Containers</h4>
-		<ul class="w3-ul">
-			<li><a href="#vboxref" onclick="w3_close()" class="w3-bar-item w3-button">vbox</a></li>
-			<li><a href="#hboxref" onclick="w3_close()" class="w3-bar-item w3-button">hbox</a></li>
-			<li><a href="#tableref" onclick="w3_close()" class="w3-bar-item w3-button">table</a></li>
+		<ul class="w3-ul w3-hoverable">
+			<li><button onclick="gotoRef('#accordionref');" class="w3-bar-item w3-button">accordion</button></li>
+			<li><button onclick="gotoRef('#dropdownref');" class="w3-bar-item w3-button">dropdown</button></li>
+			<li><button onclick="gotoRef('#hboxref');" class="w3-bar-item w3-button">hbox</button></li>
+			<li><button onclick="gotoRef('#modalref');" class="w3-bar-item w3-button">modal</button></li>
+			<li><button onclick="gotoRef('#radiogroupref');" class="w3-bar-item w3-button">radiogroup</button></li>
+			<li><button onclick="gotoRef('#sidebarref');" class="w3-bar-item w3-button">sidebar</button></li>
+			<li><button onclick="gotoRef('#tabbedboxref');" class="w3-bar-item w3-button">tabbedbox</button></li>
+			<li><button onclick="gotoRef('#tableref');" class="w3-bar-item w3-button">table</button></li>
+			<li><button onclick="gotoRef('#vboxref');" class="w3-bar-item w3-button">vbox</button></li>
 		</ul>
 		
 		<h4 class="w3-bar-item">Components</h4>
+		<ul class="w3-ul w3-hoverable">
+			<li><button onclick="gotoRef('#audioref');" class="w3-bar-item w3-button">audio</button></li>
+			<li><button onclick="gotoRef('#buttonref');" class="w3-bar-item w3-button">button</button></li>
+			<li><button onclick="gotoRef('#checkboxref');" class="w3-bar-item w3-button">checkbox</button></li>
+			<li><button onclick="gotoRef('#imageref');" class="w3-bar-item w3-button">image</button></li>
+			<li><button onclick="gotoRef('#labelref');" class="w3-bar-item w3-button">label</button></li>
+			<li><button onclick="gotoRef('#radiobuttonref');" class="w3-bar-item w3-button">radiobutton</button></li>
+			<li><button onclick="gotoRef('#separatorref');" class="w3-bar-item w3-button">separator</button></li>
+			<li><button onclick="gotoRef('#textfieldref');" class="w3-bar-item w3-button">textfield</button></li>
+			<li><button onclick="gotoRef('#videoref');" class="w3-bar-item w3-button">video</button></li>
+		</ul>
 
 		<h4 class="w3-bar-item">Attributes</h4>
 
@@ -90,47 +163,47 @@
 				<th style="width:25%;">Attributes</th>
 			</tr>
 			<tr>
-				<td><a href="#accordionref">accordion</td>
+				<td><button class="buttonlist" onclick="gotoRef('#accordionref');">accordion</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#dropdownref">dropdown</td>
+				<td><button class="buttonlist" onclick="gotoRef('#dropdownref');">dropdown</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#hboxref">hbox</td>
+				<td><button class="buttonlist" onclick="gotoRef('#hboxref');">hbox</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#modalref">modal</td>
+				<td><button class="buttonlist" onclick="gotoRef('#modalref');">modal</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#radiogroupref">radiogroup</td>
+				<td><button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#sidebarref">sidebar</td>
+				<td><button class="buttonlist" onclick="gotoRef('#sidebarref');">sidebar</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#tabbedboxref">tabbedbox</td>
+				<td><button class="buttonlist" onclick="gotoRef('#tabbedboxref');">tabbedbox</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#tableref">table</td>
+				<td><button class="buttonlist" onclick="gotoRef('#tableref');">table</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#vboxref">vbox</a></td>
+				<td><button class="buttonlist" onclick="gotoRef('#vboxref');">vbox</button></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -143,47 +216,47 @@
 				<th style="width:25%;">Attributes</th>
 			</tr>
 			<tr>
-				<td><a href="#audioref">audio</td>
+				<td><a <button class="buttonlist" onclick="gotoRef('#audioref');">audio</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#buttonref">button</td>
+				<td><button class="buttonlist" onclick="gotoRef('#buttonref');">button</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#checkboxref">checkbox</td>
+				<td><button class="buttonlist" onclick="gotoRef('#checkboxref');">checkbox</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#imageref">image</td>
+				<td><button class="buttonlist" onclick="gotoRef('#imageref');">image</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#labelref">label</td>
+				<td><button class="buttonlist" onclick="gotoRef('#labelref');">label</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#radiobuttonref">radiobutton</td>
+				<td><button class="buttonlist" onclick="gotoRef('#radiobuttonref');">radiobutton</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#separatorref">separator</td>
+				<td><button class="buttonlist" onclick="gotoRef('#separatorref');">separator</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#textfieldref">textfield</td>
+				<td><button class="buttonlist" onclick="gotoRef('#textfieldref');">textfield</button></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><a href="#videoref">video</td>
+				<td><button class="buttonlist" onclick="gotoRef('#videoref');">video</button></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -195,7 +268,7 @@
 				<th style="width:25%;">Attributes</th>
 			</tr>
 			<tr>
-				<td><a href="#">aaaa</td>
+				<td><button class="buttonlist" onclick="gotoRef('#');">aaa</button></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -232,11 +305,11 @@
 					<div class="w3-code">
 						table:<br>
 						<i class="tab">[attributes]</i><br>
-						<div class="tab">row:</div>
+						<span class="tab">row:</span><br>
 						<i class="tab2">[tags]</i><br>
-						<div class="tab">row:</div>
+						<span class="tab">row:</span><br>
 						<i class="tab2">[tags]</i><br>
-						<div class="tab">...</div>
+						<span class="tab">...</span>
 					</div>
 				</div>
 			</li>
@@ -247,10 +320,10 @@
 					<div class="w3-code">
 						tabbedbox:<br>
 						<i class="tab">[attributes]</i><br>
-						<div class="tab">tabs: <i>"tabName1", "tabName2", ...</i></div>
+						<span class="tab">tabs: <i>"tabName1", "tabName2", ...</i></span><br>
 						<i class="tab2">[tag] /* This corresponds with the first tab */</i><br>
 						<i class="tab2">[tag] /* This corresponds with the second tab */</i><br>
-						<div class="tab">...</div>
+						<span class="tab">...</span>
 					</div>
 				</div>
 			</li>
@@ -269,8 +342,9 @@
 	</div>
 	
 	<!-- FOOTER	----------------------------------------------------------------------------------->
-	<footer class="w3-container">
+	<footer id="footer" class="w3-container">
 		<br><br>
 	</footer>
+	
 </body>
 </html>
