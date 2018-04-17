@@ -7,19 +7,21 @@
 		input::-webkit-calendar-picker-indicator {display:none;}
 		header { width:100%; position:fixed; top:0; left:0; background-color:#009688; color:#ffffff; }
 		h1 { font-size: 24px; }
-		#footer { background-color:#004D40; }
-		#openNav { vertical-align:middle; height:52px; margin-top:10px; margin-bottom:10px; width:52px; background-color:#009688; color:#ffffff }
+		#footer { background-color:#00796B; }
+		#openNav { height:52px; width:52px; margin:0; position:fixed; background-color:#009688; color:#ffffff; }
 		#openNav:focus { outline:0; }
 		#openNav:hover { box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5); }
 		#openNav:active { box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5); }
 		#closeSidebar { text-align:center; position:fixed; bottom:0; background-color:#E0E0E0; }
-		#headerTitle { vertical-align:middle; }
-		#tableHeader { background-color:#00695C; color:#ffffff; }
-		#searchbox { width:320px; }
+		#tableHeader { background-color:#00796B; color:#ffffff; }
+		#searchbox { height:36px; margin:0; position:fixed; }
 		#searchbox:focus { outline:0; }
+		#headerTitle { position:fixed; margin:0; }
+		#goUpBtn { display:none; position:fixed; bottom:40px; right:40px; outline:none; color:white; background-color:#004D40; padding:10px 16px 6px 16px; }
 		.tab { padding-left: 2em; }
 		.tab2 { padding-left: 4em; }
 		.tab3 { padding-left: 6em; }
+		.descriptionCell { text-align:justify;  }
 		.buttonlist { text-decoration: underline; border:0; background-color:transparent; cursor:pointer; }
 		.buttonlist:focus { outline:0; }
 	</style>
@@ -63,15 +65,25 @@
 			
 			// HEADER
 			if(window.innerWidth < mobilew){
-				document.getElementById("openNav").className += " w3-display-topleft";
-				document.getElementById("searchbox").className += " w3-display-bottommiddle";
-				document.getElementById("headerin").style = "height:110px;";
-				document.getElementById("headerSeparator").style = "height:110px;";
+				document.getElementById("openNav").style.top = "60px";
+				document.getElementById("openNav").style.left = "10px";
+				document.getElementById("headerTitle").style.top = "18px";
+				document.getElementById("headerTitle").style.left = "18px";
+				document.getElementById("searchbox").style.top = " 68px";
+				document.getElementById("searchbox").style.right = "18px";
+				document.getElementById("searchbox").style.width = "200px";
+				document.getElementById("headerin").style.height = "112px";
+				document.getElementById("headerSeparator").style.height = "112px";
 			}else{
-				document.getElementById("openNav").className += " w3-display-left";
-				document.getElementById("searchbox").className += " w3-display-right";
-				document.getElementById("headerin").style = "height:72px;";
-				document.getElementById("headerSeparator").style = "height:72px;";
+				document.getElementById("openNav").style.top = "10px";
+				document.getElementById("openNav").style.left = "10px";
+				document.getElementById("headerTitle").style.top = "18px";
+				document.getElementById("headerTitle").style.left = "92px";
+				document.getElementById("searchbox").style.top = " 18px";
+				document.getElementById("searchbox").style.right = "18px";
+				document.getElementById("searchbox").style.width = "340px";
+				document.getElementById("headerin").style.height = "72px";
+				document.getElementById("headerSeparator").style.height = "72px";
 			}
 			
 		}
@@ -79,7 +91,7 @@
 		function gotoRef(ref){
 			window.location.href = ref;
 			if(window.innerWidth < mobilew){
-				window.scrollBy(0, -110);
+				window.scrollBy(0, -112);
 			}else{
 				window.scrollBy(0, -72);
 			}
@@ -105,15 +117,30 @@
 			}
 		}
 		
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+		
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("goUpBtn").style.display = "block";
+			} else {
+				document.getElementById("goUpBtn").style.display = "none";
+			}
+		}
+		
 	</script>
 </head>
 <body onload="loadFunc()" onresize="loadFunc()">
 	
 	<!-- HEADER -------------------------------------------------------------------------------->
 	<header>
-		<div id="headerin" class="w3-display-container">
+		<div id="headerin">
 			<button id="openNav" class="w3-button w3-xlarge w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
-			<h1 id="headerTitle" class="w3-display-middle">WPL Documentation Pages</h1>
+			<h1 id="headerTitle">WPL Documentation Pages</h1>
 			<input class="w3-input w3-padding" list="searchlist" placeholder="Search.." id="searchbox" onkeyup="setSearchboxItems()">
 			<datalist id="searchlist"></datalist>
 		</div>
@@ -154,6 +181,8 @@
 		<button id="closeSidebar" class="w3-button w3-border-top" onclick="w3_close()">Close &times;</button>
 	</div>
 	
+	<button onclick="topFunction()" id="goUpBtn" class="w3-btn w3-circle w3-xlarge w3-card">^</button>
+	
 	<div id="main" class="w3-pane">
 		<!-- TABLE --------------------------------------------------------------------------------->
 		<table class="w3-table w3-striped w3-bordered w3-centered">
@@ -164,47 +193,47 @@
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#accordionref');">accordion</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container generates a button that when pressed shows or hides the content by moving the rest of the containers.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#dropdownref');">dropdown</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container generates a button that display several options when pressed.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#hboxref');">hbox</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container organizes elements horizontally.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#modalref');">modal</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container shows the content in a pop-up window.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This is a special container for radiobuttons, only one radiobutton inside a radiogroup can be checked.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#sidebarref');">sidebar</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container creates a drop-down side panel.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#tabbedboxref');">tabbedbox</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container puts the elements in a container. Only one component is showed at a time and can be switched pressing its correspondent tab.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#tableref');">table</button></td>
-				<td></td>
+				<td><div class="descriptionCell">Each row represent a table row, and each tag inside the row correspond with a cell of that row.</div></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist" onclick="gotoRef('#vboxref');">vbox</button></td>
-				<td></td>
+				<td><div class="descriptionCell">This container organizes elements vertically.</div></td>
 				<td></td>
 			</tr>
 		</table>
@@ -276,13 +305,24 @@
 		<!-- CONTENT -------------------------------------------------------------------------------->
 		<ul class="w3-ul">
 			<li>
-				<div id="vboxref" class="w3-container">
-					<h2>vbox</h2>
-					<p>This container organizes elements vertically.</p>
+				<div id="accordionref" class="w3-container">
+					<h2>accordion</h2>
+					<p>This container generates a button that when pressed shows or hides the content by moving the rest of the containers.</p>
 					<div class="w3-code">
-						vbox:<br>
+						accordion:<br>
 						<i class="tab">[attributes]</i><br>
-						<i class="tab">[tags]</i>
+						<i class="tab">/* TERMINAR */</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="dropdownref" class="w3-container">
+					<h2>dropdown</h2>
+					<p>This container generates a button that display several options when pressed.</p>
+					<div class="w3-code">
+						dropdown:<br>
+						<i class="tab">[attributes]</i><br>
+						<i class="tab">/* TERMINAR */</i>
 					</div>
 				</div>
 			</li>
@@ -294,6 +334,57 @@
 						hbox:<br>
 						<i class="tab">[attributes]</i><br>
 						<i class="tab">[tags]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="modalref" class="w3-container">
+					<h2>modal</h2>
+					<p>This container shows the content in a pop-up window.</p>
+					<div class="w3-code">
+						modal:<br>
+						<i class="tab">[attributes]</i><br>
+						<i class="tab">[tags]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="radiogroupref" class="w3-container">
+					<h2>radiogroup</h2>
+					<p>This is a special container for radiobuttons, only one radiobutton inside a radiogroup can be checked.</p>
+					<div class="w3-code">
+						radiogroup:<br>
+						<i class="tab">[attributes]</i><br>
+						<span class="tab">radiobutton:</span><br>
+						<span class="tab2">text: "myRadioButton1"</span><br>
+						<span class="tab">radiobutton:</span><br>
+						<span class="tab2">text: "myRadioButton2"</span><br>
+						<i class="tab">...</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="sidebarref" class="w3-container">
+					<h2>sidebar</h2>
+					<p>This container creates a drop-down side panel.</p>
+					<div class="w3-code">
+						sidebar:<br>
+						<i class="tab">[attributes]</i><br>
+						<i class="tab">[tags]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="tabbedboxref" class="w3-container">
+					<h2>tabbedbox</h2>
+					<p>This container puts the elements in a container. Only one component is showed at a time and can be switched pressing its correspondent tab.</p>
+					<div class="w3-code">
+						tabbedbox:<br>
+						<i class="tab">[attributes]</i><br>
+						<span class="tab">tabs: <i>"tabName1", "tabName2", ...</i></span><br>
+						<i class="tab2">[tag] /* This corresponds with the first tab */</i><br>
+						<i class="tab2">[tag] /* This corresponds with the second tab */</i><br>
+						<span class="tab">...</span>
 					</div>
 				</div>
 			</li>
@@ -314,30 +405,16 @@
 				</div>
 			</li>
 			<li>
-				<div id="tabbedboxref" class="w3-container">
-					<h2>tabbedbox</h2>
-					<p>This container organizes put the elements in a container. Only one component is showed at a time and can be switched pressing its correspondent tab.</p>
+				<div id="vboxref" class="w3-container">
+					<h2>vbox</h2>
+					<p>This container organizes elements vertically.</p>
 					<div class="w3-code">
-						tabbedbox:<br>
-						<i class="tab">[attributes]</i><br>
-						<span class="tab">tabs: <i>"tabName1", "tabName2", ...</i></span><br>
-						<i class="tab2">[tag] /* This corresponds with the first tab */</i><br>
-						<i class="tab2">[tag] /* This corresponds with the second tab */</i><br>
-						<span class="tab">...</span>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="sidebarref" class="w3-container">
-					<h2>sidebar</h2>
-					<p>This container creates a drop-down side panel.</p>
-					<div class="w3-code">
-						sidebar:<br>
+						vbox:<br>
 						<i class="tab">[attributes]</i><br>
 						<i class="tab">[tags]</i>
 					</div>
 				</div>
-			</li>
+			</li>		
 		<ul>
 	</div>
 	
