@@ -3,169 +3,23 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<style>
-		input::-webkit-calendar-picker-indicator {display:none;}
-		header { width:100%; position:fixed; top:0; left:0; background-color:#009688; color:#ffffff; }
-		h1 { font-size: 24px; }
-		form { margin:0; padding:0; }
-		#footer { background-color:#00796B; }
-		#openNav { height:52px; width:52px; margin:0; position:fixed; background-color:#009688; color:#ffffff; }
-		#openNav:focus { outline:0; }
-		#openNav:hover { box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5); }
-		#openNav:active { box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5); }
-		#closeSidebar { text-align:center; position:fixed; bottom:0; background-color:#E0E0E0; }
-		#tableHeader { background-color:#00796B; color:#ffffff; }
-		#searchbox { height:36px; margin:0; position:fixed; }
-		#searchbox:focus { outline:0; }
-		#headerTitle { position:fixed; margin:0; }
-		#goUpBtn { display:none; position:fixed; bottom:40px; right:40px; outline:none; color:white; background-color:#004D40; padding:10px 16px 6px 16px; }
-		.tab { padding-left: 2em; }
-		.tab2 { padding-left: 4em; }
-		.tab3 { padding-left: 6em; }
-		.vseparator { width:1px; background-color:#009688; }
-		.codeStyle { font-family:"Courier New", Courier, monospace; text-align:justify; }
-		.tagCodeStyle { font-family:"Courier New", Courier, monospace; font-size:17px; }
-		.descriptionCell { text-align:justify;  }
-		.buttonlist { border:0; background-color:transparent; cursor:pointer; }
-		.buttonlist:hover { text-decoration: underline; }
-		.buttonlist:focus { outline:0; }
-		.footerLink { text-decoration: none; }
-		.footerLink:hover { text-decoration: underline; }
-		.footerFont { color: white; }
-		.footerButton { outline:none; color:white; background-color:#004D40; }
-	</style>
-	<script>
-		var sidebarWidth = "240px";
-		var mobilew = 601;
-		function w3_toggleOpen(){
-			if(document.getElementById("sideMenu").style.display == "none"){
-				w3_open();
-			}else{
-				w3_close();
-			}
-		}
-		
-		function w3_open() {
-			if(window.innerWidth < mobilew){
-				document.getElementById("sideMenu").style.width = "100%";
-				document.getElementById("closeSidebar").style.width = "100%";
-			}else{
-				document.getElementById("sideMenu").style.width = sidebarWidth;
-				document.getElementById("closeSidebar").style.width = sidebarWidth;
-				document.getElementById("main").style.marginLeft = sidebarWidth;
-				document.getElementById("footer").style.marginLeft = sidebarWidth;
-			}
-			document.getElementById("sideMenu").style.display = "block";
-		}
-		
-		function w3_close() {
-			document.getElementById("sideMenu").style.display = "none";
-			document.getElementById("main").style.marginLeft = "0";
-			document.getElementById("footer").style.marginLeft = "0";
-		}
-		
-		function loadFunc(){
-			// TABLE::td
-			var tds = document.getElementsByTagName("td");
-			for(var i = 0, j = tds.length; i < j; ++i)
-				tds[i].style.verticalAlign = "middle";
-		
-			// SIDEBAR
-			if(window.innerWidth < mobilew){
-				w3_close();
-			}else{
-				w3_open();
-			}
-			
-			// HEADER
-			if(window.innerWidth < mobilew){
-				document.getElementById("openNav").style.top = "60px";
-				document.getElementById("openNav").style.left = "10px";
-				document.getElementById("headerTitle").style.top = "18px";
-				document.getElementById("headerTitle").style.left = "18px";
-				document.getElementById("searchbox").style.top = " 68px";
-				document.getElementById("searchbox").style.right = "18px";
-				document.getElementById("searchbox").style.width = "200px";
-				document.getElementById("headerin").style.height = "112px";
-				document.getElementById("headerSeparator").style.height = "112px";
-			}else{
-				document.getElementById("openNav").style.top = "10px";
-				document.getElementById("openNav").style.left = "10px";
-				document.getElementById("headerTitle").style.top = "18px";
-				document.getElementById("headerTitle").style.left = "92px";
-				document.getElementById("searchbox").style.top = " 18px";
-				document.getElementById("searchbox").style.right = "18px";
-				document.getElementById("searchbox").style.width = "340px";
-				document.getElementById("headerin").style.height = "72px";
-				document.getElementById("headerSeparator").style.height = "72px";
-			}
-			
-		}
-		
-		function gotoRef(ref){
-			window.location.href = ref;
-			if(window.innerWidth < mobilew){
-				window.scrollBy(0, -112);
-			}else{
-				window.scrollBy(0, -72);
-			}
-		}
-		
-		function setSearchboxItems(){
-			if(event.key === 'Enter') {
-				gotoRef("#"+document.getElementById("searchbox").value.replace('-', '')+"ref");
-			}
-			
-			if(document.getElementById("searchbox").value.length>1){
-				if(document.getElementById("searchlist").innerHTML.length==0){
-					var itsearch = ["accordion", "dropdown", "hbox", "modal", "radiogroup", "sidebar", "tabbedbox", "table", "vbox",
-					"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
-					"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "class",
-					"controls", "delay", "effect", "elevation", "font-family", "font-size", "height", "id", "link", "loop",
-					"margin", "muted", "onchange", "onclick", "padding", "placeholder", "poster", "preload", "selected",
-					"src", "text", "text-align", "text-color", "text-decoration", "tooltip", "width"];
-					var toappend = "";
-					for(var i=0; i<itsearch.length; i++){
-						toappend += "<option value="+itsearch[i]+">"
-					}
-					document.getElementById("searchlist").innerHTML = toappend;
-				}
-			}else{
-				document.getElementById("searchlist").innerHTML = "";
-			}
-		}
-		
-		function topFunction() {
-			document.body.scrollTop = 0;
-			document.documentElement.scrollTop = 0;
-		}
-		
-		window.onscroll = function() {scrollFunction()};
-
-		function scrollFunction() {
-			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				document.getElementById("goUpBtn").style.display = "block";
-			} else {
-				document.getElementById("goUpBtn").style.display = "none";
-			}
-		}
-		
-	</script>
+	<link rel="stylesheet" href="main_styles.css">
+	<script src="main_scripts.js"></script>
 </head>
 <body onload="loadFunc()" onresize="loadFunc()">
 	
-	<!-- HEADER -------------------------------------------------------------------------------->
+	<!-- HEADER ############################################################################################# -->
 	<header>
 		<div id="headerin">
 			<button id="openNav" class="w3-button w3-xlarge w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
-			<h1 id="headerTitle">WPL Documentation Pages</h1>
+			<h1 id="headerTitle">WebPL Documentation Pages</h1>
 			<input class="w3-input w3-padding" list="searchlist" placeholder="Search.." id="searchbox" onkeyup="setSearchboxItems()">
 			<datalist id="searchlist"></datalist>
 		</div>
 	</header>
 	<div id="headerSeparator"></div>
 
-	<!-- SIDEBAR ------------------------------------------------------------------------------->
+	<!-- SIDEBAR ############################################################################################# -->
 	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="sideMenu">
 		<h4 class="w3-bar-item">Containers</h4>
 		<ul class="w3-ul w3-hoverable">
@@ -244,7 +98,7 @@
 	<button onclick="topFunction()" id="goUpBtn" class="w3-btn w3-circle w3-xlarge w3-card">^</button>
 	
 	<div id="main" class="w3-pane">
-		<!-- TABLE --------------------------------------------------------------------------------->
+		<!-- TABLE ############################################################################################# -->
 		<table class="w3-table w3-striped w3-bordered w3-centered">
 			<tr id="tableHeader">
 				<th style="width:20%;">Containers</th>
@@ -856,7 +710,7 @@
 			</tr>
 		</table>
 
-		<!-- CONTENT -------------------------------------------------------------------------------->
+		<!-- CONTENT ############################################################################################# -->
 		<ul class="w3-ul">
 			<li>
 				<div id="accordionref" class="w3-container">
@@ -1388,37 +1242,48 @@
 		<ul>
 	</div>
 	
-	<!-- FOOTER	----------------------------------------------------------------------------------->
-	<footer id="footer" class="w3-container w3-row w3-padding">
-		<br>
-		<div class="w3-half w3-container">
-			<h3 class="footerFont">Downloads</h3>
-			<ul>
-				<li class="footerFont"><a class="footerLink" href="https://github.com/carlosvchr/WPL-Compiler">WPL Compiler</a></li>
-				<li class="footerFont"><a class="footerLink" href="https://github.com/carlosvchr/WPL-IDE">WPL programming Environment</a></li>
-			</ul>
+	<!-- FOOTER	############################################################################################# -->
+	<footer id="footer">
+		<div class="w3-container w3-row w3-padding">
+			<div class="w3-half w3-container">
+				<h3 class="footerFont">Downloads</h3>
+				<ul>
+					<li class="footerFont"><a class="footerLink" href="https://github.com/carlosvchr/WPL-Compiler">WebPL Compiler</a></li>
+					<li class="footerFont"><a class="footerLink" href="https://github.com/carlosvchr/WPL-IDE">WebPL programming Environment</a></li>
+				</ul>
+				<br>
+				<h3 class="footerFont">About</h3>
+				<p class="infoFooter">This project aims to simplify web development as much as possible, reducing 
+				the amount of code needed as well as the time spent in the development of 
+				complete web pages. It is also intended that the programmed code be as clean 
+				and simple to understand as possible to facilitate maintenance and reduce the 
+				learning curve.</p>
+			</div>
+			
+			<form class="w3-container w3-half" action="/action_page.php">
+				<h3 class="footerFont">Contact</h3>
+				<p>      
+					<label class="footerFont"><b>Name</b></label>
+					<input class="w3-input" name="name" type="text" />
+				</p>
+				<p>      
+					<label class="footerFont"><b>Email</b></label>
+					<input class="w3-input" name="email" type="text" />
+				</p>
+				<p>      
+					<label class="footerFont"><b>Message</b></label>
+					<textarea class="w3-input" name="message" type="text" placeholder="Issues, suggestions, requests.."></textarea>
+				</p>
+				<p>
+					<button class="w3-btn footerButton">Send ></button>
+				</p>
+			</form>
 		</div>
-		
-		<form class="w3-container w3-half" action="/action_page.php">
-			<h3 class="footerFont">Contact</h3>
-			<p>      
-				<label class="footerFont"><b>Name</b></label>
-				<input class="w3-input" name="name" type="text" />
-			</p>
-			<p>      
-				<label class="footerFont"><b>Email</b></label>
-				<input class="w3-input" name="email" type="text" />
-			</p>
-			<p>      
-				<label class="footerFont"><b>Message</b></label>
-				<textarea class="w3-input" name="message" type="text"></textarea>
-			</p>
-			<p>
-				<button class="w3-btn footerButton">Send ></button>
-			</p>
-		  </form>
-		  <br>
+		<div class="hseparator"></div>
+		<div class="copyTerms"><small><i>WebPL Documentation Pages</i> is the official documentation of the WebPL language. 
+		This page is optimized to be used in computer and mobile devices. 
+		While using this site, you agree to have read and accepted our <a href="termsandconditions.html">terms of use</a>. 
+		Copyright&copy; 2018, WebPL Technologies. All Rights Reserved.</small><br></div>
 	</footer>
-	
 </body>
 </html>
