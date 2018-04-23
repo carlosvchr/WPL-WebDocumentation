@@ -84,7 +84,7 @@
 			<li><button onclick="gotoRef('#sidebartyperef');" class="w3-bar-item w3-button">sidebar-type</button></li>
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
 			<li><button onclick="gotoRef('#spacingref');" class="w3-bar-item w3-button">spacing</button></li>
-			<li><button onclick="gotoRef('#tabcolor');" class="w3-bar-item w3-button">tab-color</button></li>
+			<li><button onclick="gotoRef('#tabcolorref');" class="w3-bar-item w3-button">tab-color</button></li>
 			<li><button onclick="gotoRef('#textref');" class="w3-bar-item w3-button">text</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
@@ -578,7 +578,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#elevationref');">elevation</button></td>
 				<td><div class="descriptionCell">Simulates the elevation of a component over the page.</div></td>
-				<td><div class="codeStyle"><i>4px</i></div></td>
+				<td><div class="codeStyle"><i>[number]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#fontfamilyref');">font-family</button></td>
@@ -652,8 +652,8 @@
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#radiogroupref');">radiogroup</button></td>
-				<td><div class="descriptionCell">Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time</div></td>
-				<td><div class="codeStyle"><i>"text"</i></div></td>
+				<td><div class="descriptionCell">Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time.</div></td>
+				<td><div class="codeStyle"><i>"identifier"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#selectedref');">selected</button></td>
@@ -702,7 +702,7 @@
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tooltipref');">tooltip</button></td>
-				<td><div class="descriptionCell">Help text displayed when the cursor is placed a few seconds on a component</div></td>
+				<td><div class="descriptionCell">Help text displayed when the cursor is placed a few seconds on a component.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
@@ -1240,7 +1240,444 @@
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
-			</li>						
+			</li>		
+			<li>
+				<div id="alignref" class="w3-container content_it">
+					<h2>align</h2>
+					<p>Specifies where the element will be positioned.</p>
+					<div class="w3-code">
+						align: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						top, right, bottom, left, top-right, top-left, bottom-right, bottom-left, center						
+					</div>
+				</div>
+			</li>	
+			<li>
+				<div id="altref" class="w3-container content_it">
+					<h2>alt</h2>
+					<p>Specifies an alternative text when the image cannot be visualized.</p>
+					<div class="w3-code">
+						alt: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="animationref" class="w3-container content_it">
+					<h2>animation</h2>
+					<p>Adds visual animations like spin or fading to the component.</p>
+					<div class="w3-code">
+						animation: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						zoom, fading, fade-in, spin, move-up, move-right, move-down, move-left				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="autoplayref" class="w3-container content_it">
+					<h2>autoplay</h2>
+					<p>Specifies if the video or audio is played when loaded.</p>
+					<div class="w3-code">
+						autoplay: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="bgcolorref" class="w3-container content_it">
+					<h2>bgcolor</h2>
+					<p>Component background color.</p>
+					<div class="w3-code">
+						bgcolor: <i>"#color"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="borderref" class="w3-container content_it">
+					<h2>border</h2>
+					<p>Specifies the size of each border of the component.</p>
+					<p>One parameter sets all borders. Two parameters set the top-bottom and right-left respectively. 
+					And Four parameters set the top right bottom left borders respectively.</p>
+					<div class="w3-code">
+						border: <i>0px</i><br>
+						border: <i>0px, 0px</i><br>
+						border: <i>0px, 0px, 0px, 0px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="bordercolorref" class="w3-container content_it">
+					<h2>border-color</h2>
+					<p>Color of the border (border-size must be greater than 0 to see the color).</p>
+					<div class="w3-code">
+						border-color: <i>"#color"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="borderradiusref" class="w3-container content_it">
+					<h2>border-radius</h2>
+					<p>Makes the border rounded.</p>
+					<div class="w3-code">
+						border-radius: <i>0px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="charsetref" class="w3-container content_it">
+					<h2>charset</h2>
+					<p>Charset to be used in the Web.</p>
+					<div class="w3-code">
+						charset: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						cs-8859, cs-ansi, cs-ascii, cs-utf-8				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="classref" class="w3-container content_it">
+					<h2>class</h2>
+					<p>Shared identifier to apply styles or looking for the component.</p>
+					<div class="w3-code">
+						class: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="controlsref" class="w3-container content_it">
+					<h2>controls</h2>
+					<p>Specifies if the controls of the video or audio will be shown.</p>
+					<div class="w3-code">
+						controls: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="delayref" class="w3-container content_it">
+					<h2>delay</h2>
+					<p>Time (in seconds) until load the Web page.</p>
+					<div class="w3-code">
+						delay: <i>[seconds]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="dropdowntyperef" class="w3-container content_it">
+					<h2>dropdown-type</h2>
+					<p>Specifies the type of dropdown will be created.</p>
+					<div class="w3-code">
+						dropdown-type: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						click, hover				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="effectref" class="w3-container content_it">
+					<h2>effect</h2>
+					<p>Applies color effects into the component.</p>
+					<div class="w3-code">
+						effect: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						opacity, opacity-min, opacity-max, sepia, sepia-min, sepia-max, grayscale, grayscale-min, grayscale-max				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="elevationref" class="w3-container content_it">
+					<h2>elevation</h2>
+					<p>Simulates the elevation of a component over the page.</p>
+					<div class="w3-code">
+						elevation: <i>[number]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="fontfamilyref" class="w3-container content_it">
+					<h2>font-family</h2>
+					<p>Changes the font of the text.</p>
+					<div class="w3-code">
+						font-family: <i>"font"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="fontsizeref" class="w3-container content_it">
+					<h2>font-size</h2>
+					<p>Changes the size of the text.</p>
+					<div class="w3-code">
+						font-size: <i>12px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="heightref" class="w3-container content_it">
+					<h2>height</h2>
+					<p>Specifies the height of the component.</p>
+					<div class="w3-code">
+						height: <i>256px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="idref" class="w3-container content_it">
+					<h2>id</h2>
+					<p>Unique identifier to apply styles or looking for the component.</p>
+					<div class="w3-code">
+						id: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="linkref" class="w3-container content_it">
+					<h2>link</h2>
+					<p>Load an url when the component is clicked.</p>
+					<div class="w3-code">
+						link: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="loopref" class="w3-container content_it">
+					<h2>loop</h2>
+					<p>Specifies if the video or audio is played over and over again when ends.</p>
+					<div class="w3-code">
+						loop: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="marginref" class="w3-container content_it">
+					<h2>margin</h2>
+					<p>Change the space between the component and other components.</p>
+					<p>One parameter sets all margins. Two parameters set the top-bottom and right-left respectively. 
+					And Four parameters set the top right bottom left margins respectively.</p>
+					<div class="w3-code">
+						margin: <i>0px</i>
+						margin: <i>0px, 0px</i>
+						margin: <i>0px, 0px, 0px, 0px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="mutedref" class="w3-container content_it">
+					<h2>muted</h2>
+					<p>Specifies if the video or audio is muted when loaded.</p>
+					<div class="w3-code">
+						muted: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="onchangeref" class="w3-container content_it">
+					<h2>onchange</h2>
+					<p>Specifies the function to be called when the content changes.</p>
+					<div class="w3-code">
+						onchange: <i>"my_function()"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="onclickref" class="w3-container content_it">
+					<h2>onclick</h2>
+					<p>Specifies the function to be called when the content is clicked.</p>
+					<div class="w3-code">
+						onclick: <i>"my_function()"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="paddingref" class="w3-container content_it">
+					<h2>padding</h2>
+					<p>Change the internal space between the component and the components inside.</p>
+					<p>One parameter sets all paddings. Two parameters set the top-bottom and right-left respectively. 
+					And Four parameters set the top right bottom left paddings respectively.</p>
+					<div class="w3-code">
+						padding: <i>0px</i>
+						padding: <i>0px, 0px</i>
+						padding: <i>0px, 0px, 0px, 0px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="placeholderref" class="w3-container content_it">
+					<h2>placeholder</h2>
+					<p>Specifies a text that is displayed when nothing is written in the textfield.</p>
+					<div class="w3-code">
+						placeholder: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="posterref" class="w3-container content_it">
+					<h2>poster</h2>
+					<p>Sets an image to be shown while the video is not loaded.</p>
+					<div class="w3-code">
+						poster: <i>"imageRef"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="preloadref" class="w3-container content_it">
+					<h2>preload</h2>
+					<p>Specifies if the video must be loaded as soon as possible or when the user tries to watch it.</p>
+					<div class="w3-code">
+						preload: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="radiogroupref" class="w3-container content_it">
+					<h2>radiogroup</h2>
+					<p>Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time</p>
+					<div class="w3-code">
+						radiogroup: <i>"identifier"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="selectedref" class="w3-container content_it">
+					<h2>selected</h2>
+					<p>Specifies if the radiobutton or checkbox must be displayed as selected when is loaded.</p>
+					<div class="w3-code">
+						selected: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="sidebartyperef" class="w3-container content_it">
+					<h2>sidebar-type</h2>
+					<p>Specifies if the sidebar displace all the content to fit into the page or is displayed over the content when is shown.</p>
+					<div class="w3-code">
+						sidebar-type: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						hover, no-hover				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="srcref" class="w3-container content_it">
+					<h2>src</h2>
+					<p>Specifies the source path of some resource like images, audios, videos, javascript files, css files or WebPL files.</p>
+					<div class="w3-code">
+						src: <i>"fileRef"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="spacingref" class="w3-container content_it">
+					<h2>spacing</h2>
+					<p>Specifies the internal space between the components into a container.</p>
+					<div class="w3-code">
+						spacing: <i>8px</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="tabcolorref" class="w3-container content_it">
+					<h2>tab-color</h2>
+					<p>Change the color of the tabs of a tabbedbox container.</p>
+					<div class="w3-code">
+						tab-color: <i>"#color"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="textref" class="w3-container content_it">
+					<h2>text</h2>
+					<p>Sets the text to be displayed.</p>
+					<div class="w3-code">
+						text: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="textalignref" class="w3-container content_it">
+					<h2>text-align</h2>
+					<p>Specifies the alignment of the text.</p>
+					<div class="w3-code">
+						text-align: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						right, left, center				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="textcolorref" class="w3-container content_it">
+					<h2>text-color</h2>
+					<p>Specifies the color of the text.</p>
+					<div class="w3-code">
+						text-color: <i>"#color"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="textdecorationref" class="w3-container content_it">
+					<h2>text-decoration</h2>
+					<p>Sets some special styles to the text.</p>
+					<div class="w3-code">
+						text-decoration: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						bold, italic, underline, overline, strikethrough				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="tooltipref" class="w3-container content_it">
+					<h2>tooltip</h2>
+					<p>Help text displayed when the cursor is placed a few seconds on a component.</p>
+					<div class="w3-code">
+						tooltip: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="widthref" class="w3-container content_it">
+					<h2>width</h2>
+					<p>Specifies the width of the component.</p>
+					<div class="w3-code">
+						width: <i>256px</i>
+					</div>
+				</div>
+			</li>	
 		<ul>
 	</div>
 	

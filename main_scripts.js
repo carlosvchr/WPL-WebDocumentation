@@ -1,11 +1,12 @@
 var sidebarWidth = "240px";
 var mobilew = 601;
-var itsearch = ["accordion", "dropdown", "hbox", "modal", "radiogroup", "sidebar", "tabbedbox", "table", "vbox",
+var itsearch = ["accordion", "dropdown", "hbox", "modal", "sidebar", "tabbedbox", "table", "vbox",
 			"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
-			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "class",
-			"controls", "delay", "effect", "elevation", "font-family", "font-size", "height", "id", "link", "loop",
-			"margin", "muted", "onchange", "onclick", "padding", "placeholder", "poster", "preload", "selected",
-			"src", "text", "text-align", "text-color", "text-decoration", "tooltip", "width"];
+			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "charset" 
+			"class", "controls", "delay", "dropdown-type", "effect", "elevation", "font-family", "font-size",
+			"height", "id", "link", "loop",	"margin", "muted", "onchange", "onclick", "padding", "placeholder", 
+			"poster", "preload", "radiogroup", "selected", "sidebar-type", "src", "spacing", "tab-color", "text",
+			"text-align", "text-color", "text-decoration", "tooltip", "width"];
 
 
 function w3_toggleOpen(){
