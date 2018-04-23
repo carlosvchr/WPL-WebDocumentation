@@ -23,6 +23,13 @@
 
 	<!-- SIDEBAR ############################################################################################# -->
 	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="sideMenu">
+		<h4 class="w3-bar-item">Special tags</h4>
+		<ul class="w3-ul w3-hoverable">
+			<li><button onclick="gotoRef('#defineref');" class="w3-bar-item w3-button">define</button></li>
+			<li><button onclick="gotoRef('#importref');" class="w3-bar-item w3-button">import</button></li>
+			<li><button onclick="gotoRef('#includeref');" class="w3-bar-item w3-button">include</button></li>
+		</ul>
+	
 		<h4 class="w3-bar-item">Containers</h4>
 		<ul class="w3-ul w3-hoverable">
 			<li><button onclick="gotoRef('#accordionref');" class="w3-bar-item w3-button">accordion</button></li>
@@ -53,6 +60,7 @@
 			<li><button onclick="gotoRef('#alignref');" class="w3-bar-item w3-button">align</button></li>
 			<li><button onclick="gotoRef('#altref');" class="w3-bar-item w3-button">alt</button></li>
 			<li><button onclick="gotoRef('#animationref');" class="w3-bar-item w3-button">animation</button></li>
+			<li><button onclick="gotoRef('#authorref');" class="w3-bar-item w3-button">author</button></li>
 			<li><button onclick="gotoRef('#autoplayref');" class="w3-bar-item w3-button">autoplay</button></li>
 			<li><button onclick="gotoRef('#bgcolorref');" class="w3-bar-item w3-button">bgcolor</button></li>
 			<li><button onclick="gotoRef('#borderref');" class="w3-bar-item w3-button">border</button></li>
@@ -61,7 +69,7 @@
 			<li><button onclick="gotoRef('#charsetref');" class="w3-bar-item w3-button">charset</button></li>
 			<li><button onclick="gotoRef('#classref');" class="w3-bar-item w3-button">class</button></li>
 			<li><button onclick="gotoRef('#controlsref');" class="w3-bar-item w3-button">controls</button></li>
-			<li><button onclick="gotoRef('#delayref');" class="w3-bar-item w3-button">delay</button></li>
+			<li><button onclick="gotoRef('#descriptionref');" class="w3-bar-item w3-button">description</button></li>
 			<li><button onclick="gotoRef('#dropdowntyperef');" class="w3-bar-item w3-button">dropdown-type</button></li>
 			<li><button onclick="gotoRef('#effectref');" class="w3-bar-item w3-button">effect</button></li>
 			<li><button onclick="gotoRef('#elevationref');" class="w3-bar-item w3-button">elevation</button></li>
@@ -69,6 +77,8 @@
 			<li><button onclick="gotoRef('#fontsizeref');" class="w3-bar-item w3-button">font-size</button></li>
 			<li><button onclick="gotoRef('#heightref');" class="w3-bar-item w3-button">height</button></li>
 			<li><button onclick="gotoRef('#idref');" class="w3-bar-item w3-button">id</button></li>
+			<li><button onclick="gotoRef('#keywordsref');" class="w3-bar-item w3-button">keywords</button></li>
+			<li><button onclick="gotoRef('#langref');" class="w3-bar-item w3-button">lang</button></li>
 			<li><button onclick="gotoRef('#linkref');" class="w3-bar-item w3-button">link</button></li>
 			<li><button onclick="gotoRef('#loopref');" class="w3-bar-item w3-button">loop</button></li>
 			<li><button onclick="gotoRef('#marginref');" class="w3-bar-item w3-button">margin</button></li>
@@ -76,10 +86,12 @@
 			<li><button onclick="gotoRef('#onchangeref');" class="w3-bar-item w3-button">onchange</button></li>
 			<li><button onclick="gotoRef('#onclickref');" class="w3-bar-item w3-button">onclick</button></li>
 			<li><button onclick="gotoRef('#paddingref');" class="w3-bar-item w3-button">padding</button></li>
+			<li><button onclick="gotoRef('#pageiconref');" class="w3-bar-item w3-button">pageicon</button></li>
 			<li><button onclick="gotoRef('#placeholderref');" class="w3-bar-item w3-button">placeholder</button></li>
 			<li><button onclick="gotoRef('#posterref');" class="w3-bar-item w3-button">poster</button></li>
 			<li><button onclick="gotoRef('#preloadref');" class="w3-bar-item w3-button">preload</button></li>
 			<li><button onclick="gotoRef('#radiogroupref');" class="w3-bar-item w3-button">radiogroup</button></li>
+			<li><button onclick="gotoRef('#redirectref');" class="w3-bar-item w3-button">redirect</button></li>
 			<li><button onclick="gotoRef('#selectedref');" class="w3-bar-item w3-button">selected</button></li>
 			<li><button onclick="gotoRef('#sidebartyperef');" class="w3-bar-item w3-button">sidebar-type</button></li>
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
@@ -89,6 +101,7 @@
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
 			<li><button onclick="gotoRef('#textdecorationref');" class="w3-bar-item w3-button">text-decoration</button></li>
+			<li><button onclick="gotoRef('#titleref');" class="w3-bar-item w3-button">title</button></li>
 			<li><button onclick="gotoRef('#tooltipref');" class="w3-bar-item w3-button">tooltip</button></li>
 			<li><button onclick="gotoRef('#widthref');" class="w3-bar-item w3-button">width</button></li>
 			<li><div style="height:48px;"></div></li>
@@ -101,7 +114,43 @@
 	
 	<div id="main" class="w3-pane">
 		<!-- TABLE ############################################################################################# -->
-		<table class="w3-table w3-striped w3-bordered w3-centered">
+		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
+			<tr id="tableHeader">
+				<th style="width:20%;">Special tags</th>
+				<th style="width:40%;">Description</th>
+				<th style="width:40%;">Values</th>
+			</tr>
+			<tr>
+				<td><i class="tagCodeStyle">[metadata]</i></td>
+				<td><div class="descriptionCell">Defines the meta data of the Web page. These attributes only can be declared at the beginning of the document.</div></td>
+				<td><div class="codeStyle">
+					<button class="buttonlist" onclick="gotoRef('#authorref');">author</button>, 
+					<button class="buttonlist" onclick="gotoRef('#charsetref');">charset</button>, 
+					<button class="buttonlist" onclick="gotoRef('#descriptionref');">description</button>,
+					<button class="buttonlist" onclick="gotoRef('#keywordsref');">keywords</button>, 
+					<button class="buttonlist" onclick="gotoRef('#langref');">lang</button>, 
+					<button class="buttonlist" onclick="gotoRef('#pageiconref');">pageicon</button>,
+					<button class="buttonlist" onclick="gotoRef('#redirectref');">redirect</button>,  
+					<button class="buttonlist" onclick="gotoRef('#titleref');">title</button>	
+				</div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#defineref');">define</button></td>
+				<td><div class="descriptionCell">Allows to define custom tags.</div></td>
+				<td><div class="codeStyle"><i>["identifier", "text"]</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#importref');">import</button></td>
+				<td><div class="descriptionCell">Import javascript or css files to make it accessible.</div></td>
+				<td><div class="codeStyle"><i>"path/file.css", "path/file.js"</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#includeref');">include</button></td>
+				<td><div class="descriptionCell">Include webpl code where it is defined.</div></td>
+				<td><div class="codeStyle"><i>"path/file.wpla"</i></div></td>
+			</tr>
+		</table>
+		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
 			<tr id="tableHeader">
 				<th style="width:20%;">Containers</th>
 				<th style="width:40%;">Description</th>
@@ -282,7 +331,7 @@
 			</tr>
 		</table>
 		
-		<table class="w3-table w3-striped w3-bordered w3-centered">
+		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
 			<tr id="tableHeader">
 				<th style="width:20%;">Components</th>
 				<th style="width:40%;">Description</th>
@@ -499,7 +548,7 @@
 				</div></td>
 			</tr>
 		</table>
-		<table class="w3-table w3-striped w3-bordered w3-centered">
+		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
 			<tr id="tableHeader">
 				<th style="width:20%;">Attributes</th>
 				<th style="width:40%;">Description</th>
@@ -519,6 +568,11 @@
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#animationref');">animation</button></td>
 				<td><div class="descriptionCell">Adds visual animations like spin or fading to the component.</div></td>
 				<td><div class="codeStyle">zoom, fading, fade-in, spin, move-up, move-right, move-down, move-left</div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#authorref');">author</button></td>
+				<td><div class="descriptionCell">Specifies the author of the content.</div></td>
+				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#autoplayref');">autoplay</button></td>
@@ -561,9 +615,9 @@
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#delayref');">delay</button></td>
-				<td><div class="descriptionCell">Time (in seconds) until load the Web page.</div></td>
-				<td><div class="codeStyle"><i>[seconds]</i></div></td>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#descriptionref');">description</button></td>
+				<td><div class="descriptionCell">Specifies a text that describes the content of the Web page.</div></td>
+				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#dropdowntyperef');">dropdown-type</button></td>
@@ -601,6 +655,16 @@
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#keywordsref');">keywords</button></td>
+				<td><div class="descriptionCell">Specifies key words to facilitate search engines to find the page.</div></td>
+				<td><div class="codeStyle"><i>"keyword1, keyword2, ..."</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#langref');">lang</button></td>
+				<td><div class="descriptionCell">Specifies the language the content is written.</div></td>
+				<td><div class="codeStyle"><i>["country-code"]</i></div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#linkref');">link</button></td>
 				<td><div class="descriptionCell">Load an url when the component is clicked.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -636,6 +700,11 @@
 				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#pageiconref');">pageicon</button></td>
+				<td><div class="descriptionCell">Sets the displayed icon of the page.</div></td>
+				<td><div class="codeStyle"><i>"path/img.ico"</i></div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#placeholderref');">placeholder</button></td>
 				<td><div class="descriptionCell">Specifies a text that is displayed when nothing is written in the textfield.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -654,6 +723,11 @@
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#radiogroupref');">radiogroup</button></td>
 				<td><div class="descriptionCell">Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time.</div></td>
 				<td><div class="codeStyle"><i>"identifier"</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#redirectref');">redirect</button></td>
+				<td><div class="descriptionCell">Redirects to another page after a certain time.</div></td>
+				<td><div class="codeStyle"><i>[seconds, "url"]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#selectedref');">selected</button></td>
@@ -701,6 +775,11 @@
 				<td><div class="codeStyle">bold, italic, underline, overline, strikethrough</div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#titleref');">title</button></td>
+				<td><div class="descriptionCell">Specifies the displayed title of the page.</div></td>
+				<td><div class="codeStyle">"text"</div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tooltipref');">tooltip</button></td>
 				<td><div class="descriptionCell">Help text displayed when the cursor is placed a few seconds on a component.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -714,6 +793,34 @@
 		<br>
 		<!-- CONTENT ############################################################################################# -->
 		<ul class="w3-ul">
+			<li>
+				<div id="defineref" class="w3-container content_it">
+					<h2>define</h2>
+					<p>Allows to define custom tags.</p>
+					<div class="w3-code">
+						define: <i>"identifier", "html code"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="importref" class="w3-container content_it">
+					<h2>import</h2>
+					<p>Import javascript or css files to make it accessible.</p>
+					<div class="w3-code">
+						import: <i>"path/file.css"</i>
+						import: <i>"path/file.js"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="includeref" class="w3-container content_it">
+					<h2>include</h2>
+					<p>Include webpl code where it is defined.</p>
+					<div class="w3-code">
+						include: <i>"path/file.wpla"</i>
+					</div>
+				</div>
+			</li>
 			<li>
 				<div id="accordionref" class="w3-container content_it">
 					<h2>accordion</h2>
@@ -1277,6 +1384,15 @@
 				</div>
 			</li>
 			<li>
+				<div id="authorref" class="w3-container content_it">
+					<h2>author</h2>
+					<p>Specifies the author of the content.</p>
+					<div class="w3-code">
+						author: <i>"author name"</i>
+					</div>
+				</div>
+			</li>
+			<li>
 				<div id="autoplayref" class="w3-container content_it">
 					<h2>autoplay</h2>
 					<p>Specifies if the video or audio is played when loaded.</p>
@@ -1365,11 +1481,11 @@
 				</div>
 			</li>
 			<li>
-				<div id="delayref" class="w3-container content_it">
-					<h2>delay</h2>
-					<p>Time (in seconds) until load the Web page.</p>
+				<div id="descriptionref" class="w3-container content_it">
+					<h2>description</h2>
+					<p>Specifies a text that describes the content of the Web page.</p>
 					<div class="w3-code">
-						delay: <i>[seconds]</i>
+						description: <i>"text"</i>
 					</div>
 				</div>
 			</li>
@@ -1442,6 +1558,26 @@
 					<div class="w3-code">
 						id: <i>"text"</i>
 					</div>
+				</div>
+			</li>
+			<li>
+				<div id="keywordsref" class="w3-container content_it">
+					<h2>keywords</h2>
+					<p>Specifies key words to facilitate search engines to find the page.</p>
+					<div class="w3-code">
+						keywords: <i>"keyword1, keyword2, keyword3,..."</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="langref" class="w3-container content_it">
+					<h2>lang</h2>
+					<p>Specifies key words to facilitate search engines to find the page.</p>
+					<div class="w3-code">
+						lang: <i>"country-code"</i>
+					</div>
+					<h4>Values</h4>
+					<div>See <a href="languagecodes.html">ISO 639-1 Language Codes</a></div>
 				</div>
 			</li>
 			<li>
@@ -1524,6 +1660,15 @@
 				</div>
 			</li>
 			<li>
+				<div id="pageiconref" class="w3-container content_it">
+					<h2>pageicon</h2>
+					<p>Sets the displayed icon of the page.</p>
+					<div class="w3-code">
+						pageicon: <i>"path/img.ico"</i>
+					</div>
+				</div>
+			</li>
+			<li>
 				<div id="placeholderref" class="w3-container content_it">
 					<h2>placeholder</h2>
 					<p>Specifies a text that is displayed when nothing is written in the textfield.</p>
@@ -1560,6 +1705,15 @@
 					<p>Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time</p>
 					<div class="w3-code">
 						radiogroup: <i>"identifier"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="redirectref" class="w3-container content_it">
+					<h2>redirect</h2>
+					<p>Redirects to another page after a certain time.</p>
+					<div class="w3-code">
+						redirect: <i>[seconds], "url"</i>
 					</div>
 				</div>
 			</li>
@@ -1661,6 +1815,15 @@
 				</div>
 			</li>
 			<li>
+				<div id="titleref" class="w3-container content_it">
+					<h2>title</h2>
+					<p>Specifies the displayed title of the page.</p>
+					<div class="w3-code">
+						title: <i>"text"</i>
+					</div>
+				</div>
+			</li>
+			<li>
 				<div id="tooltipref" class="w3-container content_it">
 					<h2>tooltip</h2>
 					<p>Help text displayed when the cursor is placed a few seconds on a component.</p>
@@ -1699,7 +1862,7 @@
 				learning curve.</p>
 			</div>
 			
-			<form class="w3-container w3-half" action="/action_page.php">
+			<form class="w3-container w3-half" action="mailto:contact.webpl@gmail.com" method="post" enctype="text/plain">
 				<h3 class="footerFont">Contact <i class="material-icons footertitleic">contact_mail</i></h3>
 				<p>      
 					<label class="footerFont"><b>Name</b></label>
@@ -1707,14 +1870,14 @@
 				</p>
 				<p>      
 					<label class="footerFont"><b>Email</b></label>
-					<input class="w3-input" name="email" type="text" />
+					<input class="w3-input" name="mail" type="text" />
 				</p>
 				<p>      
 					<label class="footerFont"><b>Message</b></label>
-					<textarea class="w3-input" name="message" type="text" placeholder="Issues, suggestions, requests.."></textarea>
+					<textarea class="w3-input" name="comment" type="text" placeholder="Issues, suggestions, requests.."></textarea>
 				</p>
 				<p>
-					<button class="w3-btn footerButton">Send ></button>
+					<input type="submit" value="Send >" class="w3-btn footerButton">
 				</p>
 			</form>
 		</div>
