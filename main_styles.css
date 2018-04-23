@@ -9,13 +9,14 @@ form { margin:0; padding:0; margin-bottom:20px; }
 #openNav:active { box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5); }
 #closeSidebar { text-align:center; position:fixed; bottom:0; background-color:#E0E0E0; }
 #tableHeader { background-color:#00796B; color:#ffffff; }
-#searchbox { height:36px; margin:0; position:fixed; }
-#searchbox:focus { outline:0; }
+#searchbox { height:36px; margin:0; position:fixed; outline:0; border:0; background-color:white; }
+#searchboxbtn { height:36px; width:36px; margin:0; position:fixed; outline:0; border:0; background-color:white; }
 #headerTitle { position:fixed; margin:0; }
 #goUpBtn { display:none; position:fixed; bottom:40px; right:40px; outline:none; color:white; background-color:#004D40; padding:10px 16px 6px 16px; }
 .tab { padding-left: 2em; }
 .tab2 { padding-left: 4em; }
 .tab3 { padding-left: 6em; }
+.searchbtnicon { color:black;  }
 .hseparator { width:100%; height:1px; background-color:#009688; }
 .codeStyle { font-family:"Courier New", Courier, monospace; text-align:justify; }
 .tagCodeStyle { font-family:"Courier New", Courier, monospace; font-size:17px; }

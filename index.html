@@ -3,6 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="main_styles.css">
 	<script src="main_scripts.js"></script>
 </head>
@@ -14,6 +15,7 @@
 			<button id="openNav" class="w3-button w3-xlarge w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
 			<h1 id="headerTitle">WebPL Documentation Pages</h1>
 			<input class="w3-input w3-padding" list="searchlist" placeholder="Search.." id="searchbox" onkeyup="setSearchboxItems()">
+			<button id="searchboxbtn" onclick="searchboxFind()" class="w3-button material-icons searchbtnicon">search</button>
 			<datalist id="searchlist"></datalist>
 		</div>
 	</header>
@@ -515,197 +517,197 @@
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#animationref');">animation</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Adds visual animations like spin or fading to the component.</div></td>
 				<td><div class="codeStyle">zoom, fading, fade-in, spin, move-up, move-right, move-down, move-left</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#autoplayref');">autoplay</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the video or audio is played when loaded.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#bgcolorref');">bgcolor</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Component background color.</div></td>
 				<td><div class="codeStyle"><i>"#0f0f0f"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#borderref');">border</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the size of each border of the component.</div></td>
 				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#bordercolorref');">border-color</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Color of the border (border-size must be greater than 0 to see the color).</div></td>
 				<td><div class="codeStyle"><i>"#f0f0f0"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#borderradiusref');">border-radius</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Makes the border rounded.</div></td>
 				<td><div class="codeStyle"><i>0px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#charsetref');">charset</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Charset to be used in the Web.</div></td>
 				<td><div class="codeStyle">cs-8859, cs-ansi, cs-ascii, cs-utf-8</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#classref');">class</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Shared identifier to apply styles or looking for the component.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#controlsref');">controls</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the controls of the video or audio will be shown.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#delayref');">delay</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Time (in seconds) until load the Web page.</div></td>
 				<td><div class="codeStyle"><i>[seconds]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#dropdowntyperef');">dropdown-type</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the type of dropdown will be created.</div></td>
 				<td><div class="codeStyle">click, hover</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#effectref');">effect</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Applies color effects into the component.</div></td>
 				<td><div class="codeStyle">opacity, opacity-min, opacity-max, sepia, sepia-min, sepia-max, grayscale, grayscale-min, grayscale-max</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#elevationref');">elevation</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Simulates the elevation of a component over the page.</div></td>
 				<td><div class="codeStyle"><i>4px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#fontfamilyref');">font-family</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Changes the font of the text.</div></td>
 				<td><div class="codeStyle"><i>"font"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#fontsizeref');">font-size</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Changes the size of the text.</div></td>
 				<td><div class="codeStyle"><i>12px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#heightref');">height</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the height of the component.</div></td>
 				<td><div class="codeStyle"><i>256px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#idref');">id</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Unique identifier to apply styles or looking for the component.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#linkref');">link</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Load an url when the component is clicked.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#loopref');">loop</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the video or audio is played over and over again when ends.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#marginref');">margin</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Change the space between the component and other components.</div></td>
 				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#mutedref');">muted</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the video or audio is muted when loaded.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#onchangeref');">onchange</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the function to be called when the content changes.</div></td>
 				<td><div class="codeStyle"><i>"my_function()"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#onclickref');">onclick</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the function to be called when the content is clicked.</div></td>
 				<td><div class="codeStyle"><i>"my_function()"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#paddingref');">padding</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Change the internal space between the component and the components inside.</div></td>
 				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#placeholderref');">placeholder</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies a text that is displayed when nothing is written in the textfield.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#posterref');">poster</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Sets an image to be shown while the video is not loaded.</div></td>
 				<td><div class="codeStyle"><i>"imageRef"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#preloadref');">preload</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the video must be loaded as soon as possible or when the user tries to watch it.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#radiogroupref');">radiogroup</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Assign a group to the radiobutton so that only one of those belonging to the same group can be selected at the same time</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#selectedref');">selected</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the radiobutton or checkbox must be displayed as selected when is loaded.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#sidebartyperef');">sidebar-type</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies if the sidebar displace all the content to fit into the page or is displayed over the content when is shown.</div></td>
 				<td><div class="codeStyle">hover, no-hover</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#srcref');">src</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the source path of some resource like images, audios, videos, javascript files, css files or WebPL files.</div></td>
 				<td><div class="codeStyle"><i>"fileRef"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#spacingref');">spacing</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the internal space between the components into a container.</div></td>
 				<td><div class="codeStyle"><i>8px</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabcolorref');">tab-color</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Change the color of the tabs of a tabbedbox container.</div></td>
 				<td><div class="codeStyle"><i>"#f0f0f0"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textref');">text</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Sets the text to be displayed.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textalignref');">text-align</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the alignment of the text.</div></td>
 				<td><div class="codeStyle">right, left, center</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textcolorref');">text-color</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the color of the text.</div></td>
 				<td><div class="codeStyle">"#f0f0f0"</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textdecorationref');">text-decoration</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Sets some special styles to the text.</div></td>
 				<td><div class="codeStyle">bold, italic, underline, overline, strikethrough</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tooltipref');">tooltip</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Help text displayed when the cursor is placed a few seconds on a component</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#widthref');">width</button></td>
-				<td><div class="descriptionCell"></div></td>
+				<td><div class="descriptionCell">Specifies the width of the component.</div></td>
 				<td><div class="codeStyle"><i>256px</i></div></td>
 			</tr>
 		</table>
@@ -1243,7 +1245,7 @@
 	</div>
 	
 	<!-- FOOTER	############################################################################################# -->
-	<footer id="footer">
+	<footer id="footer" class="w3-container">
 		<div class="w3-container w3-row w3-padding">
 			<div class="w3-half w3-container">
 				<h3 class="footerFont">Downloads</h3>

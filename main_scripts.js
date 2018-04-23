@@ -1,5 +1,13 @@
 var sidebarWidth = "240px";
 var mobilew = 601;
+var itsearch = ["accordion", "dropdown", "hbox", "modal", "radiogroup", "sidebar", "tabbedbox", "table", "vbox",
+			"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
+			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "class",
+			"controls", "delay", "effect", "elevation", "font-family", "font-size", "height", "id", "link", "loop",
+			"margin", "muted", "onchange", "onclick", "padding", "placeholder", "poster", "preload", "selected",
+			"src", "text", "text-align", "text-color", "text-decoration", "tooltip", "width"];
+
+
 function w3_toggleOpen(){
 	if(document.getElementById("sideMenu").style.display == "none"){
 		w3_open();
@@ -47,7 +55,9 @@ function loadFunc(){
 		document.getElementById("headerTitle").style.top = "18px";
 		document.getElementById("headerTitle").style.left = "18px";
 		document.getElementById("searchbox").style.top = " 68px";
-		document.getElementById("searchbox").style.right = "18px";
+		document.getElementById("searchbox").style.right = "54px";
+		document.getElementById("searchboxbtn").style.top = "68px";
+		document.getElementById("searchboxbtn").style.right = "18px";
 		document.getElementById("searchbox").style.width = "200px";
 		document.getElementById("headerin").style.height = "112px";
 		document.getElementById("headerSeparator").style.height = "112px";
@@ -57,7 +67,9 @@ function loadFunc(){
 		document.getElementById("headerTitle").style.top = "18px";
 		document.getElementById("headerTitle").style.left = "92px";
 		document.getElementById("searchbox").style.top = " 18px";
-		document.getElementById("searchbox").style.right = "18px";
+		document.getElementById("searchbox").style.right = "54px";
+		document.getElementById("searchboxbtn").style.top = "18px";
+		document.getElementById("searchboxbtn").style.right = "18px";
 		document.getElementById("searchbox").style.width = "340px";
 		document.getElementById("headerin").style.height = "72px";
 		document.getElementById("headerSeparator").style.height = "72px";
@@ -74,19 +86,30 @@ function gotoRef(ref){
 	}
 }
 
+function searchboxFind(){
+	if(existsSearchedItem(document.getElementById("searchbox").value) == true){
+		gotoRef("#"+document.getElementById("searchbox").value.replace('-', '')+"ref");
+	}
+}
+
+function existsSearchedItem(s){
+	var i;
+	var found = false;
+	for(i=0; i<itsearch.length; i++){
+		if(s === itsearch[i]){
+			found = true;
+		}
+	}
+	return found;
+}
+
 function setSearchboxItems(){
 	if(event.key === 'Enter') {
-		gotoRef("#"+document.getElementById("searchbox").value.replace('-', '')+"ref");
+		searchboxFind();
 	}
 	
 	if(document.getElementById("searchbox").value.length>1){
 		if(document.getElementById("searchlist").innerHTML.length==0){
-			var itsearch = ["accordion", "dropdown", "hbox", "modal", "radiogroup", "sidebar", "tabbedbox", "table", "vbox",
-			"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
-			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "class",
-			"controls", "delay", "effect", "elevation", "font-family", "font-size", "height", "id", "link", "loop",
-			"margin", "muted", "onchange", "onclick", "padding", "placeholder", "poster", "preload", "selected",
-			"src", "text", "text-align", "text-color", "text-decoration", "tooltip", "width"];
 			var toappend = "";
 			for(var i=0; i<itsearch.length; i++){
 				toappend += "<option value="+itsearch[i]+">"
@@ -103,8 +126,6 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 		document.getElementById("goUpBtn").style.display = "block";
@@ -112,3 +133,7 @@ function scrollFunction() {
 		document.getElementById("goUpBtn").style.display = "none";
 	}
 }
+
+window.onscroll = function() {scrollFunction()};
+
+
