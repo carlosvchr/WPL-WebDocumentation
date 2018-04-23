@@ -25,8 +25,12 @@ form { margin:0; padding:0; margin-bottom:20px; }
 .buttonlist:hover { text-decoration: underline; }
 .buttonlist:focus { outline:0; }
 .footerLink { text-decoration: none; }
+.content_it { margin-bottom:16px; }
 .footerLink:hover { text-decoration: underline; }
 .footerFont { color: white; }
-.infoFooter { text-align:justify; color:white; }
+.infoFooter { text-align:justify; color:white; font-size:14px; }
 .footerButton { outline:none; color:white; background-color:#004D40; }
 .copyTerms { text-align:center; color:white; padding:12px 8px 12px 8px; }
+.linkfooteric { font-size:14px; color:white; }
+.footerdownloads { margin-bottom:8px; }
+.footertitleic { color:white; font-size:24px; height:31px; vertical-align:middle; margin-left:4px; }
