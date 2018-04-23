@@ -2,7 +2,7 @@ var sidebarWidth = "240px";
 var mobilew = 601;
 var itsearch = ["accordion", "dropdown", "hbox", "modal", "sidebar", "tabbedbox", "table", "vbox",
 			"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
-			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "charset" 
+			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius", "charset", 
 			"class", "controls", "delay", "dropdown-type", "effect", "elevation", "font-family", "font-size",
 			"height", "id", "link", "loop",	"margin", "muted", "onchange", "onclick", "padding", "placeholder", 
 			"poster", "preload", "radiogroup", "selected", "sidebar-type", "src", "spacing", "tab-color", "text",
