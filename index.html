@@ -97,6 +97,7 @@
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
 			<li><button onclick="gotoRef('#spacingref');" class="w3-bar-item w3-button">spacing</button></li>
 			<li><button onclick="gotoRef('#tabcolorref');" class="w3-bar-item w3-button">tab-color</button></li>
+			<li><button onclick="gotoRef('#tabsref');" class="w3-bar-item w3-button">tabs</button></li>
 			<li><button onclick="gotoRef('#textref');" class="w3-bar-item w3-button">text</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
@@ -137,7 +138,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#defineref');">define</button></td>
 				<td><div class="descriptionCell">Allows to define custom tags.</div></td>
-				<td><div class="codeStyle"><i>["identifier", "text"]</i></div></td>
+				<td><div class="codeStyle"><i>[identifier, "text"]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#importref');">import</button></td>
@@ -755,6 +756,11 @@
 				<td><div class="codeStyle"><i>"#f0f0f0"</i></div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabsref');">tabs</button></td>
+				<td><div class="descriptionCell">Set the title of the tabs into the tabbedbox.</div></td>
+				<td><div class="codeStyle"><i>["TitleTab1", "TitleTab2", ...]</i></div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textref');">text</button></td>
 				<td><div class="descriptionCell">Sets the text to be displayed.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -796,9 +802,16 @@
 			<li>
 				<div id="defineref" class="w3-container content_it">
 					<h2>define</h2>
-					<p>Allows to define custom tags.</p>
+					<p>Allows to create global constants.</p>
+					<p>To access it, the identifier must be preceded by $ symbol.</p>
 					<div class="w3-code">
-						define: <i>"identifier", "html code"</i>
+						define: <i>identifier, "html code"</i>
+					</div>
+					<h4>Example</h4>
+					<div class="w3-code">
+						define: <i>mainColor, "#ff0000"</i><br>
+						hbox:<br>
+						<span class="tab">background-color: $mainColor</span>
 					</div>
 				</div>
 			</li>
@@ -1010,10 +1023,13 @@
 				<div id="tableref" class="w3-container content_it">
 					<h2>table</h2>
 					<p>This container organizes elements in rows and columns.</p>
-					<p>Each row represent a table row, and each tag inside the row correspond with a cell of that row.</p>
+					<p>Each row tag represents a row in the table, and each tag inside the row correspond to a column of that row.</p>
+					<p>The row-header tag is to set the table header, but it is optional.</p>
 					<div class="w3-code">
 						table:<br>
 						<i class="tab">[attributes]</i><br>
+						<span class="tab">row-header:</span><br>
+						<i class="tab2">[tags]</i><br>
 						<span class="tab">row:</span><br>
 						<i class="tab2">[tags]</i><br>
 						<span class="tab">row:</span><br>
@@ -1771,6 +1787,15 @@
 					<p>Change the color of the tabs of a tabbedbox container.</p>
 					<div class="w3-code">
 						tab-color: <i>"#color"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="tabsref" class="w3-container content_it">
+					<h2>tabs</h2>
+					<p>Sets the title of the tabs into the tabbedbox.</p>
+					<div class="w3-code">
+						tab-color: <i>"TitleTab1", "TitleTab2", "TitleTab3"</i>
 					</div>
 				</div>
 			</li>
