@@ -68,6 +68,7 @@
 			<li><button onclick="gotoRef('#borderradiusref');" class="w3-bar-item w3-button">border-radius</button></li>
 			<li><button onclick="gotoRef('#charsetref');" class="w3-bar-item w3-button">charset</button></li>
 			<li><button onclick="gotoRef('#classref');" class="w3-bar-item w3-button">class</button></li>
+			<li><button onclick="gotoRef('#collapsibleref');" class="w3-bar-item w3-button">collapsible</button></li>
 			<li><button onclick="gotoRef('#controlsref');" class="w3-bar-item w3-button">controls</button></li>
 			<li><button onclick="gotoRef('#descriptionref');" class="w3-bar-item w3-button">description</button></li>
 			<li><button onclick="gotoRef('#dropdowntyperef');" class="w3-bar-item w3-button">dropdown-type</button></li>
@@ -98,7 +99,6 @@
 			<li><button onclick="gotoRef('#spacingref');" class="w3-bar-item w3-button">spacing</button></li>
 			<li><button onclick="gotoRef('#tabcolorref');" class="w3-bar-item w3-button">tab-color</button></li>
 			<li><button onclick="gotoRef('#tabsref');" class="w3-bar-item w3-button">tabs</button></li>
-			<li><button onclick="gotoRef('#textref');" class="w3-bar-item w3-button">text</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
 			<li><button onclick="gotoRef('#textdecorationref');" class="w3-bar-item w3-button">text-decoration</button></li>
@@ -138,7 +138,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#defineref');">define</button></td>
 				<td><div class="descriptionCell">Allows to define custom tags.</div></td>
-				<td><div class="codeStyle"><i>[identifier, "text"]</i></div></td>
+				<td><div class="codeStyle"><i>[identifier "text"]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#importref');">import</button></td>
@@ -252,6 +252,7 @@
 					<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
 					<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
+					<button class="buttonlist" onclick="gotoRef('#collapsiblerev');">collapsible</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
@@ -371,7 +372,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -397,7 +397,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -447,7 +446,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -474,7 +472,6 @@
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 					<button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button>, 
-					<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -511,7 +508,6 @@
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 					<button class="buttonlist" onclick="gotoRef('#placeholderref');">placeholder</button>, 
-					<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -583,27 +579,32 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#bgcolorref');">bgcolor</button></td>
 				<td><div class="descriptionCell">Component background color.</div></td>
-				<td><div class="codeStyle"><i>"#0f0f0f"</i></div></td>
+				<td><div class="codeStyle"><i>#0f0f0f</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#borderref');">border</button></td>
 				<td><div class="descriptionCell">Specifies the size of each border of the component.</div></td>
-				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
+				<td><div class="codeStyle"><i>[0px 0px 0px 0px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#bordercolorref');">border-color</button></td>
 				<td><div class="descriptionCell">Color of the border (border-size must be greater than 0 to see the color).</div></td>
-				<td><div class="codeStyle"><i>"#f0f0f0"</i></div></td>
+				<td><div class="codeStyle"><i>#f0f0f0</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#borderradiusref');">border-radius</button></td>
 				<td><div class="descriptionCell">Makes the border rounded.</div></td>
-				<td><div class="codeStyle"><i>0px</i></div></td>
+				<td><div class="codeStyle"><i>[0px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#charsetref');">charset</button></td>
 				<td><div class="descriptionCell">Charset to be used in the Web.</div></td>
-				<td><div class="codeStyle">cs-8859, cs-ansi, cs-ascii, cs-utf-8</div></td>
+				<td><div class="codeStyle">"8859", "ansi", "ascii", "utf-8"</div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#collapsibleref');">collapsible</button></td>
+				<td><div class="descriptionCell">Set the sidebar as collapsible or fixed.</div></td>
+				<td><div class="codeStyle">true, flase</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#classref');">class</button></td>
@@ -623,7 +624,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#dropdowntyperef');">dropdown-type</button></td>
 				<td><div class="descriptionCell">Specifies the type of dropdown will be created.</div></td>
-				<td><div class="codeStyle">click, hover</div></td>
+				<td><div class="codeStyle">clickable, hoverable</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#effectref');">effect</button></td>
@@ -643,12 +644,12 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#fontsizeref');">font-size</button></td>
 				<td><div class="descriptionCell">Changes the size of the text.</div></td>
-				<td><div class="codeStyle"><i>12px</i></div></td>
+				<td><div class="codeStyle"><i>[12px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#heightref');">height</button></td>
 				<td><div class="descriptionCell">Specifies the height of the component.</div></td>
-				<td><div class="codeStyle"><i>256px</i></div></td>
+				<td><div class="codeStyle"><i>[256px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#idref');">id</button></td>
@@ -663,7 +664,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#langref');">lang</button></td>
 				<td><div class="descriptionCell">Specifies the language the content is written.</div></td>
-				<td><div class="codeStyle"><i>["country-code"]</i></div></td>
+				<td><div class="codeStyle"><i>"country-code"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#linkref');">link</button></td>
@@ -678,7 +679,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#marginref');">margin</button></td>
 				<td><div class="descriptionCell">Change the space between the component and other components.</div></td>
-				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
+				<td><div class="codeStyle"><i>[0px 0px 0px 0px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#mutedref');">muted</button></td>
@@ -698,7 +699,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#paddingref');">padding</button></td>
 				<td><div class="descriptionCell">Change the internal space between the component and the components inside.</div></td>
-				<td><div class="codeStyle"><i>0px, 0px, 0px, 0px</i></div></td>
+				<td><div class="codeStyle"><i>[0px 0px 0px 0px]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#pageiconref');">pageicon</button></td>
@@ -728,7 +729,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#redirectref');">redirect</button></td>
 				<td><div class="descriptionCell">Redirects to another page after a certain time.</div></td>
-				<td><div class="codeStyle"><i>[seconds, "url"]</i></div></td>
+				<td><div class="codeStyle"><i>[seconds "url"]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#selectedref');">selected</button></td>
@@ -738,7 +739,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#sidebartyperef');">sidebar-type</button></td>
 				<td><div class="descriptionCell">Specifies if the sidebar displace all the content to fit into the page or is displayed over the content when is shown.</div></td>
-				<td><div class="codeStyle">hover, no-hover</div></td>
+				<td><div class="codeStyle">floating, sliding</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#srcref');">src</button></td>
@@ -753,17 +754,12 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabcolorref');">tab-color</button></td>
 				<td><div class="descriptionCell">Change the color of the tabs of a tabbedbox container.</div></td>
-				<td><div class="codeStyle"><i>"#f0f0f0"</i></div></td>
+				<td><div class="codeStyle"><i>#f0f0f0</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabsref');">tabs</button></td>
 				<td><div class="descriptionCell">Set the title of the tabs into the tabbedbox.</div></td>
-				<td><div class="codeStyle"><i>["TitleTab1", "TitleTab2", ...]</i></div></td>
-			</tr>
-			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textref');">text</button></td>
-				<td><div class="descriptionCell">Sets the text to be displayed.</div></td>
-				<td><div class="codeStyle"><i>"text"</i></div></td>
+				<td><div class="codeStyle"><i>["TitleTab1" "TitleTab2" ...]</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textalignref');">text-align</button></td>
@@ -773,7 +769,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textcolorref');">text-color</button></td>
 				<td><div class="descriptionCell">Specifies the color of the text.</div></td>
-				<td><div class="codeStyle">"#f0f0f0"</div></td>
+				<td><div class="codeStyle">#f0f0f0</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textdecorationref');">text-decoration</button></td>
@@ -793,7 +789,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#widthref');">width</button></td>
 				<td><div class="descriptionCell">Specifies the width of the component.</div></td>
-				<td><div class="codeStyle"><i>256px</i></div></td>
+				<td><div class="codeStyle"><i>[256px]</i></div></td>
 			</tr>
 		</table>
 		<br>
@@ -805,11 +801,11 @@
 					<p>Allows to create global constants.</p>
 					<p>To access it, the identifier must be preceded by $ symbol.</p>
 					<div class="w3-code">
-						define: <i>identifier, "html code"</i>
+						define: <i>identifier "html code"</i>
 					</div>
 					<h4>Example</h4>
 					<div class="w3-code">
-						define: <i>mainColor, "#ff0000"</i><br>
+						define: <i>mainColor #ff0000</i><br>
 						hbox:<br>
 						<span class="tab">background-color: $mainColor</span>
 					</div>
@@ -820,7 +816,7 @@
 					<h2>import</h2>
 					<p>Import javascript or css files to make it accessible.</p>
 					<div class="w3-code">
-						import: <i>"path/file.css"</i>
+						import: <i>"path/file.css"</i><br>
 						import: <i>"path/file.js"</i>
 					</div>
 				</div>
@@ -1114,8 +1110,7 @@
 					<h2>button</h2>
 					<p>Creates a simple button that throws click events.</p>
 					<div class="w3-code">
-						button:<br>
-						<span class="tab">text: "my_button"</span><br>
+						button: "clickme"<br>
 						<i class="tab">[attributes]</i>
 					</div>
 					<h4>Attributes</h4>
@@ -1134,7 +1129,6 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1148,8 +1142,7 @@
 					<h2>checkbox</h2>
 					<p>Multiple selection button.</p>
 					<div class="w3-code">
-						checkbox:<br>
-						<span class="tab">text: "my_checkbox"</span><br>
+						checkbox: "my_checkbox"<br>
 						<i class="tab">[attributes]</i>
 					</div>
 					<h4>Attributes</h4>
@@ -1168,7 +1161,6 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1214,8 +1206,7 @@
 					<h2>label</h2>
 					<p>Creates a text component.</p>
 					<div class="w3-code">
-						label:<br>
-						<span class="tab">text: "some text."</span><br>
+						label: "some text"<br>
 						<i class="tab">[attributes]</i>
 					</div>
 					<h4>Attributes</h4>
@@ -1234,7 +1225,6 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1248,9 +1238,8 @@
 					<h2>radiobutton</h2>
 					<p>Single selection button.</p>
 					<div class="w3-code">
-						radiogroup:<br>
+						radiogroup: "my_radiobutton"<br>
 						<span class="tab">radiobutton:</span><br>
-						<span class="tab2">text: "my_radiobutton"</span><br>
 						<span class="tab2">radiogroup: "group1"</span><br>
 						<i class="tab2">[attributes]</i>
 					</div>
@@ -1271,7 +1260,6 @@
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 						<button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button>, 
-						<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1322,7 +1310,6 @@
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 						<button class="buttonlist" onclick="gotoRef('#placeholderref');">placeholder</button>, 
-						<button class="buttonlist" onclick="gotoRef('#textref');">text</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1430,7 +1417,7 @@
 					<h2>bgcolor</h2>
 					<p>Component background color.</p>
 					<div class="w3-code">
-						bgcolor: <i>"#color"</i>
+						bgcolor: <i>#color</i>
 					</div>
 				</div>
 			</li>
@@ -1442,8 +1429,8 @@
 					And Four parameters set the top right bottom left borders respectively.</p>
 					<div class="w3-code">
 						border: <i>0px</i><br>
-						border: <i>0px, 0px</i><br>
-						border: <i>0px, 0px, 0px, 0px</i>
+						border: <i>0px 0px</i><br>
+						border: <i>0px 0px 0px 0px</i>
 					</div>
 				</div>
 			</li>
@@ -1452,7 +1439,7 @@
 					<h2>border-color</h2>
 					<p>Color of the border (border-size must be greater than 0 to see the color).</p>
 					<div class="w3-code">
-						border-color: <i>"#color"</i>
+						border-color: <i>#color</i>
 					</div>
 				</div>
 			</li>
@@ -1474,7 +1461,20 @@
 					</div>
 					<h4>Values</h4>
 					<div class="codeStyle">
-						cs-8859, cs-ansi, cs-ascii, cs-utf-8				
+						"8859", "ansi", "ascii", "utf-8"				
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="collapsibleref" class="w3-container content_it">
+					<h2>collapsible</h2>
+					<p>Set the sidebar as collapsible or fixed.</p>
+					<div class="w3-code">
+						collapsible: <i>[value]</i>
+					</div>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						true, false			
 					</div>
 				</div>
 			</li>
@@ -1518,7 +1518,7 @@
 					</div>
 					<h4>Values</h4>
 					<div class="codeStyle">
-						click, hover				
+						clickable, hoverable				
 					</div>
 				</div>
 			</li>
@@ -1594,7 +1594,7 @@
 					<h2>lang</h2>
 					<p>Specifies key words to facilitate search engines to find the page.</p>
 					<div class="w3-code">
-						lang: <i>"country-code"</i>
+						lang: <i>"language-code"</i>
 					</div>
 					<h4>Values</h4>
 					<div>See <a href="languagecodes.html">ISO 639-1 Language Codes</a></div>
@@ -1630,8 +1630,8 @@
 					And Four parameters set the top right bottom left margins respectively.</p>
 					<div class="w3-code">
 						margin: <i>0px</i>
-						margin: <i>0px, 0px</i>
-						margin: <i>0px, 0px, 0px, 0px</i>
+						margin: <i>0px 0px</i>
+						margin: <i>0px 0px 0px 0px</i>
 					</div>
 				</div>
 			</li>
@@ -1674,8 +1674,8 @@
 					And Four parameters set the top right bottom left paddings respectively.</p>
 					<div class="w3-code">
 						padding: <i>0px</i>
-						padding: <i>0px, 0px</i>
-						padding: <i>0px, 0px, 0px, 0px</i>
+						padding: <i>0px 0px</i>
+						padding: <i>0px 0px 0px 0px</i>
 					</div>
 				</div>
 			</li>
@@ -1733,7 +1733,7 @@
 					<h2>redirect</h2>
 					<p>Redirects to another page after a certain time.</p>
 					<div class="w3-code">
-						redirect: <i>[seconds], "url"</i>
+						redirect: <i>[seconds] "url"</i>
 					</div>
 				</div>
 			</li>
@@ -1759,7 +1759,7 @@
 					</div>
 					<h4>Values</h4>
 					<div class="codeStyle">
-						hover, no-hover				
+						floating, sliding				
 					</div>
 				</div>
 			</li>
@@ -1786,7 +1786,7 @@
 					<h2>tab-color</h2>
 					<p>Change the color of the tabs of a tabbedbox container.</p>
 					<div class="w3-code">
-						tab-color: <i>"#color"</i>
+						tab-color: <i>#color</i>
 					</div>
 				</div>
 			</li>
@@ -1795,16 +1795,7 @@
 					<h2>tabs</h2>
 					<p>Sets the title of the tabs into the tabbedbox.</p>
 					<div class="w3-code">
-						tab-color: <i>"TitleTab1", "TitleTab2", "TitleTab3"</i>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="textref" class="w3-container content_it">
-					<h2>text</h2>
-					<p>Sets the text to be displayed.</p>
-					<div class="w3-code">
-						text: <i>"text"</i>
+						tab-color: <i>"TitleTab1" "TitleTab2" "TitleTab3"</i>
 					</div>
 				</div>
 			</li>
@@ -1826,7 +1817,7 @@
 					<h2>text-color</h2>
 					<p>Specifies the color of the text.</p>
 					<div class="w3-code">
-						text-color: <i>"#color"</i>
+						text-color: <i>#color</i>
 					</div>
 				</div>
 			</li>

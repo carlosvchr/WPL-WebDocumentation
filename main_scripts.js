@@ -5,9 +5,9 @@ var itsearch = ["import", "include", "define",
 			"accordion", "dropdown", "hbox", "modal", "sidebar", "tabbedbox", "table", "vbox",
 			"audio", "button", "checkbox", "image", "label", "radiobutton", "separator", "textfield", "video",
 			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius",
-			"class", "controls", "dropdown-type", "effect", "elevation", "font-family", "font-size",
+			"class", "controls", "dropdown-type", "effect", "elevation", "font-family", "font-size", "collapsible",
 			"height", "id", "link", "loop",	"margin", "muted", "onchange", "onclick", "padding", "placeholder", 
-			"poster", "preload", "radiogroup", "selected", "sidebar-type", "src", "spacing", "tab-color", "tabs", "text",
+			"poster", "preload", "radiogroup", "selected", "sidebar-type", "src", "spacing", "tab-color", "tabs",
 			"text-align", "text-color", "text-decoration", "tooltip", "width"];
 
 
@@ -84,6 +84,7 @@ function gotoRef(ref){
 	window.location.href = ref;
 	if(window.innerWidth < mobilew){
 		window.scrollBy(0, -112);
+		w3_close();
 	}else{
 		window.scrollBy(0, -72);
 	}
