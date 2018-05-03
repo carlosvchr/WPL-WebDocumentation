@@ -36,8 +36,9 @@
 			<li><button onclick="gotoRef('#dropdownref');" class="w3-bar-item w3-button">dropdown</button></li>
 			<li><button onclick="gotoRef('#hboxref');" class="w3-bar-item w3-button">hbox</button></li>
 			<li><button onclick="gotoRef('#modalref');" class="w3-bar-item w3-button">modal</button></li>
+			<li><button onclick="gotoRef('#rowref');" class="w3-bar-item w3-button">row</button></li>
+			<li><button onclick="gotoRef('#rowheaderref');" class="w3-bar-item w3-button">row-header</button></li>
 			<li><button onclick="gotoRef('#sidebarref');" class="w3-bar-item w3-button">sidebar</button></li>
-			<li><button onclick="gotoRef('#tabbedboxref');" class="w3-bar-item w3-button">tabbedbox</button></li>
 			<li><button onclick="gotoRef('#tableref');" class="w3-bar-item w3-button">table</button></li>
 			<li><button onclick="gotoRef('#vboxref');" class="w3-bar-item w3-button">vbox</button></li>
 		</ul>
@@ -50,7 +51,6 @@
 			<li><button onclick="gotoRef('#imageref');" class="w3-bar-item w3-button">image</button></li>
 			<li><button onclick="gotoRef('#labelref');" class="w3-bar-item w3-button">label</button></li>
 			<li><button onclick="gotoRef('#radiobuttonref');" class="w3-bar-item w3-button">radiobutton</button></li>
-			<li><button onclick="gotoRef('#separatorref');" class="w3-bar-item w3-button">separator</button></li>
 			<li><button onclick="gotoRef('#textfieldref');" class="w3-bar-item w3-button">textfield</button></li>
 			<li><button onclick="gotoRef('#videoref');" class="w3-bar-item w3-button">video</button></li>
 		</ul>
@@ -97,8 +97,7 @@
 			<li><button onclick="gotoRef('#sidebartyperef');" class="w3-bar-item w3-button">sidebar-type</button></li>
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
 			<li><button onclick="gotoRef('#spacingref');" class="w3-bar-item w3-button">spacing</button></li>
-			<li><button onclick="gotoRef('#tabcolorref');" class="w3-bar-item w3-button">tab-color</button></li>
-			<li><button onclick="gotoRef('#tabsref');" class="w3-bar-item w3-button">tabs</button></li>
+			<li><button onclick="gotoRef('#tableattrsref');" class="w3-bar-item w3-button">table-attrs</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
 			<li><button onclick="gotoRef('#textdecorationref');" class="w3-bar-item w3-button">text-decoration</button></li>
@@ -168,13 +167,18 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
 					<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
+					<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -190,13 +194,18 @@
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#dropdowntyperef');">dropdown-type</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
 					<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
+					<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -244,6 +253,48 @@
 				</div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#rowref');">row</button></td>
+				<td><div class="descriptionCell">Must be inside a table container. Represents a row of the table.</div></td>
+				<td><div class="codeStyle">
+					<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
+					<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
+					<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
+					<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
+					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
+					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
+					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
+					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
+					<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
+					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
+					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
+					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
+				</div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#rowheaderref');">row-header</button></td>
+				<td><div class="descriptionCell">Must be the first container used inside a table (if used). Represents the header of the table.</div></td>
+				<td><div class="codeStyle">
+					<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
+					<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
+					<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
+					<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
+					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
+					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
+					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
+					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
+					<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
+					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
+					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
+					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
+				</div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#sidebarref');">sidebar</button></td>
 				<td><div class="descriptionCell">This container creates a drop-down side panel.</div></td>
 				<td><div class="codeStyle">
@@ -267,28 +318,6 @@
 				</div></td>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabbedboxref');">tabbedbox</button></td>
-				<td><div class="descriptionCell">This container puts the elements in a container. Only one component is showed at a time and can be switched pressing its correspondent tab.</div></td>
-				<td><div class="codeStyle">
-					<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
-					<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
-					<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
-					<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
-					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
-					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
-					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
-					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
-					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
-					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
-					<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
-					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
-					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#tabcolorref');">tab-color</button>,
-					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
-				</div></td>
-			</tr>
-			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tableref');">table</button></td>
 				<td><div class="descriptionCell">Each row represent a table row, and each tag inside the row correspond with a cell of that row.</div></td>
 				<td><div class="codeStyle">
@@ -306,6 +335,7 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -365,6 +395,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -390,6 +422,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -397,6 +431,7 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#selectedref');">selected</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -439,6 +474,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -464,6 +501,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -472,19 +511,11 @@
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 					<button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button>, 
+					<button class="buttonlist" onclick="gotoRef('#selectedref');">selected</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 					<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
-					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
-				</div></td>
-			</tr>
-			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#separatorref');">separator</button></td>
-				<td><div class="descriptionCell">Creates an horizontal line separator.</div></td>
-				<td><div class="codeStyle">
-					<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
-					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>,
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -499,6 +530,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -752,14 +785,9 @@
 				<td><div class="codeStyle"><i>8px</i></div></td>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabcolorref');">tab-color</button></td>
-				<td><div class="descriptionCell">Change the color of the tabs of a tabbedbox container.</div></td>
-				<td><div class="codeStyle"><i>#f0f0f0</i></div></td>
-			</tr>
-			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tabsref');">tabs</button></td>
-				<td><div class="descriptionCell">Set the title of the tabs into the tabbedbox.</div></td>
-				<td><div class="codeStyle"><i>["TitleTab1" "TitleTab2" ...]</i></div></td>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tableattrsref');">table-attrs</button></td>
+				<td><div class="descriptionCell">Sets specific properties of the table.</div></td>
+				<td><div class="codeStyle">bordered, centered, hoverable, striped</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#textalignref');">text-align</button></td>
@@ -834,11 +862,9 @@
 				<div id="accordionref" class="w3-container content_it">
 					<h2>accordion</h2>
 					<p>This container generates a button that when pressed shows or hides the content by moving the rest of the containers.</p>
-					<p>First tag create the accordion launcher. The rest will be into the accordion content.</p>
 					<div class="w3-code">
-						accordion:<br>
+						accordion: "some text"<br>
 						<i class="tab">[attributes]</i><br>
-						<i class="tab">[TAG]</i><br>
 						<i class="tab">[TAGS]</i>
 					</div>
 					<h4>Attributes</h4>
@@ -850,13 +876,18 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
 						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
+						<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -865,11 +896,9 @@
 				<div id="dropdownref" class="w3-container content_it">
 					<h2>dropdown</h2>
 					<p>This container generates a button that display several options when pressed.</p>
-					<p>First tag create the dropdown launcher. The rest will be the items into the dropdown.</p>
 					<div class="w3-code">
-						dropdown:<br>
+						dropdown: "some text"<br>
 						<i class="tab">[attributes]</i><br>
-						<i class="tab">[TAG]</i><br>
 						<i class="tab">[TAGS]</i>
 					</div>
 					<h4>Attributes</h4>
@@ -882,13 +911,18 @@
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#dropdowntyperef');">dropdown-type</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
 						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
+						<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -953,6 +987,82 @@
 				</div>
 			</li>
 			<li>
+				<div id="rowref" class="w3-container content_it">
+					<h2>row</h2>
+					<p>Must be inside a table container. Represents a row of the table.</p>
+					<div class="w3-code">
+						table:<br>
+						<i class="tab">[attributes]</i><br>
+						<span class="tab">row-header:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">...</span>
+					</div>
+					<h4>Attributes</h4>
+					<div class="codeStyle">
+						<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
+						<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
+						<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
+						<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
+						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
+						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
+						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
+						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
+						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
+						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
+						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
+						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="rowheaderref" class="w3-container content_it">
+					<h2>row-header</h2>
+					<p>Must be the first container used inside a table (if used). Represents the header of the table.</p>
+					<div class="w3-code">
+						table:<br>
+						<i class="tab">[attributes]</i><br>
+						<span class="tab">row-header:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
+						<i class="tab2">[tags]</i><br>
+						<span class="tab">...</span>
+					</div>
+					<h4>Attributes</h4>
+					<div class="codeStyle">
+						<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
+						<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
+						<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
+						<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
+						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
+						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
+						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
+						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
+						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
+						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
+						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
+						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
+					</div>
+				</div>
+			</li>
+			<li>
 				<div id="sidebarref" class="w3-container content_it">
 					<h2>sidebar</h2>
 					<p>This container creates a drop-down side panel.</p>
@@ -983,39 +1093,6 @@
 				</div>
 			</li>
 			<li>
-				<div id="tabbedboxref" class="w3-container content_it">
-					<h2>tabbedbox</h2>
-					<p>This container puts the elements in a container. Only one component is showed at a time and can be switched pressing its correspondent tab.</p>
-					<div class="w3-code">
-						tabbedbox:<br>
-						<i class="tab">[attributes]</i><br>
-						<span class="tab">tabs: <i>"tabName1", "tabName2", ...</i></span><br>
-						<i class="tab">[tag] /* This corresponds with the first tab */</i><br>
-						<i class="tab">[tag] /* This corresponds with the second tab */</i><br>
-						<span class="tab">...</span>
-					</div>
-					<h4>Attributes</h4>
-					<div class="codeStyle">
-						<button class="buttonlist" onclick="gotoRef('#animationref');">animation</button>, 
-						<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
-						<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
-						<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
-						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
-						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
-						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
-						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
-						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
-						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
-						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
-						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
-						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
-						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#tabcolorref');">tab-color</button>, 
-						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
-					</div>
-				</div>
-			</li>
-			<li>
 				<div id="tableref" class="w3-container content_it">
 					<h2>table</h2>
 					<p>This container organizes elements in rows and columns.</p>
@@ -1025,10 +1102,13 @@
 						table:<br>
 						<i class="tab">[attributes]</i><br>
 						<span class="tab">row-header:</span><br>
+						<i class="tab2">[attrs]</i><br>
 						<i class="tab2">[tags]</i><br>
 						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
 						<i class="tab2">[tags]</i><br>
 						<span class="tab">row:</span><br>
+						<i class="tab2">[attrs]</i><br>
 						<i class="tab2">[tags]</i><br>
 						<span class="tab">...</span>
 					</div>
@@ -1048,6 +1128,7 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1122,6 +1203,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1154,6 +1237,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1161,6 +1246,7 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#selectedref');">selected</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
@@ -1218,6 +1304,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1252,6 +1340,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1260,26 +1350,11 @@
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
 						<button class="buttonlist" onclick="gotoRef('#radiogroupref');">radiogroup</button>, 
+						<button class="buttonlist" onclick="gotoRef('#selectedref');">selected</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 						<button class="buttonlist" onclick="gotoRef('#tooltipref');">tooltip</button>, 
-						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="separatorref" class="w3-container content_it">
-					<h2>separator</h2>
-					<p>Creates an horizontal line separator.</p>
-					<div class="w3-code">
-						separator:<br>
-						<i class="tab">[attributes]</i>
-					</div>
-					<h4>Attributes</h4>
-					<div class="codeStyle">
-						<button class="buttonlist" onclick="gotoRef('#bgcolorref');">bgcolor</button>, 
-						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>,
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1301,6 +1376,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1782,20 +1859,15 @@
 				</div>
 			</li>
 			<li>
-				<div id="tabcolorref" class="w3-container content_it">
-					<h2>tab-color</h2>
-					<p>Change the color of the tabs of a tabbedbox container.</p>
+				<div id="tableattrsref" class="w3-container content_it">
+					<h2>table-attrs</h2>
+					<p>Sets specific properties of the table.</p>
 					<div class="w3-code">
-						tab-color: <i>#color</i>
+						spacing: <i>[value]</i>
 					</div>
-				</div>
-			</li>
-			<li>
-				<div id="tabsref" class="w3-container content_it">
-					<h2>tabs</h2>
-					<p>Sets the title of the tabs into the tabbedbox.</p>
-					<div class="w3-code">
-						tab-color: <i>"TitleTab1" "TitleTab2" "TitleTab3"</i>
+					<h4>Values</h4>
+					<div class="codeStyle">
+						bordered, centered, hoverable, striped				
 					</div>
 				</div>
 			</li>
