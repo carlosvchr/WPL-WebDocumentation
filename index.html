@@ -96,7 +96,6 @@
 			<li><button onclick="gotoRef('#selectedref');" class="w3-bar-item w3-button">selected</button></li>
 			<li><button onclick="gotoRef('#sidebartyperef');" class="w3-bar-item w3-button">sidebar-type</button></li>
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
-			<li><button onclick="gotoRef('#spacingref');" class="w3-bar-item w3-button">spacing</button></li>
 			<li><button onclick="gotoRef('#tableattrsref');" class="w3-bar-item w3-button">table-attrs</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
 			<li><button onclick="gotoRef('#textcolorref');" class="w3-bar-item w3-button">text-color</button></li>
@@ -227,7 +226,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>,
-					<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -263,6 +261,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -270,6 +270,9 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -284,6 +287,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -291,6 +296,9 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -328,6 +336,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 					<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 					<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -335,7 +345,9 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
+					<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+					<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -357,7 +369,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -780,11 +791,6 @@
 				<td><div class="codeStyle"><i>"fileRef"</i></div></td>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#spacingref');">spacing</button></td>
-				<td><div class="descriptionCell">Specifies the internal space between the components into a container.</div></td>
-				<td><div class="codeStyle"><i>8px</i></div></td>
-			</tr>
-			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#tableattrsref');">table-attrs</button></td>
 				<td><div class="descriptionCell">Sets specific properties of the table.</div></td>
 				<td><div class="codeStyle">bordered, centered, hoverable, striped</div></td>
@@ -952,7 +958,6 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1012,14 +1017,19 @@
 						<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
-						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>,
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>,  
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
 						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
-						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>,
+						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>,  
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1051,6 +1061,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1058,6 +1070,9 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1121,6 +1136,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
+						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
 						<button class="buttonlist" onclick="gotoRef('#heightref');">height</button>, 
 						<button class="buttonlist" onclick="gotoRef('#idref');">id</button>, 
@@ -1128,7 +1145,9 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
+						<button class="buttonlist" onclick="gotoRef('#textalignref');">text-align</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textcolorref');">text-color</button>, 
+						<button class="buttonlist" onclick="gotoRef('#textdecorationref');">text-decoration</button>, 
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1158,7 +1177,6 @@
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#spacingref');">spacing</button>,
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1846,28 +1864,6 @@
 					<p>Specifies the source path of some resource like images, audios, videos, javascript files, css files or WebPL files.</p>
 					<div class="w3-code">
 						src: <i>"fileRef"</i>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="spacingref" class="w3-container content_it">
-					<h2>spacing</h2>
-					<p>Specifies the internal space between the components into a container.</p>
-					<div class="w3-code">
-						spacing: <i>8px</i>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="tableattrsref" class="w3-container content_it">
-					<h2>table-attrs</h2>
-					<p>Sets specific properties of the table.</p>
-					<div class="w3-code">
-						spacing: <i>[value]</i>
-					</div>
-					<h4>Values</h4>
-					<div class="codeStyle">
-						bordered, centered, hoverable, striped				
 					</div>
 				</div>
 			</li>

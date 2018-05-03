@@ -7,7 +7,7 @@ var itsearch = ["import", "include", "define",
 			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius",
 			"class", "controls", "dropdown-type", "effect", "elevation", "font-family", "font-size", "collapsible",
 			"height", "id", "link", "loop",	"margin", "muted", "onchange", "onclick", "padding", "placeholder", 
-			"poster", "preload", "radiogroup", "row", "row-header", "selected", "sidebar-type", "src", "spacing", 
+			"poster", "preload", "radiogroup", "row", "row-header", "selected", "sidebar-type", "src",  
 			"text-align", "text-color", "text-decoration", "tooltip", "width"];
 
 
