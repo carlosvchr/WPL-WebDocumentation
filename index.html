@@ -35,6 +35,7 @@
 			<li><button onclick="gotoRef('#accordionref');" class="w3-bar-item w3-button">accordion</button></li>
 			<li><button onclick="gotoRef('#dropdownref');" class="w3-bar-item w3-button">dropdown</button></li>
 			<li><button onclick="gotoRef('#hboxref');" class="w3-bar-item w3-button">hbox</button></li>
+			<li><button onclick="gotoRef('#htmlref');" class="w3-bar-item w3-button">html</button></li>
 			<li><button onclick="gotoRef('#modalref');" class="w3-bar-item w3-button">modal</button></li>
 			<li><button onclick="gotoRef('#rowref');" class="w3-bar-item w3-button">row</button></li>
 			<li><button onclick="gotoRef('#rowheaderref');" class="w3-bar-item w3-button">row-header</button></li>
@@ -68,12 +69,13 @@
 			<li><button onclick="gotoRef('#borderradiusref');" class="w3-bar-item w3-button">border-radius</button></li>
 			<li><button onclick="gotoRef('#charsetref');" class="w3-bar-item w3-button">charset</button></li>
 			<li><button onclick="gotoRef('#classref');" class="w3-bar-item w3-button">class</button></li>
-			<li><button onclick="gotoRef('#collapsibleref');" class="w3-bar-item w3-button">collapsible</button></li>
 			<li><button onclick="gotoRef('#controlsref');" class="w3-bar-item w3-button">controls</button></li>
 			<li><button onclick="gotoRef('#descriptionref');" class="w3-bar-item w3-button">description</button></li>
 			<li><button onclick="gotoRef('#dropdowntyperef');" class="w3-bar-item w3-button">dropdown-type</button></li>
 			<li><button onclick="gotoRef('#effectref');" class="w3-bar-item w3-button">effect</button></li>
 			<li><button onclick="gotoRef('#elevationref');" class="w3-bar-item w3-button">elevation</button></li>
+			<li><button onclick="gotoRef('#filterdropdownref');" class="w3-bar-item w3-button">filter-dropdown</button></li>
+			<li><button onclick="gotoRef('#filtertableref');" class="w3-bar-item w3-button">filter-table</button></li>
 			<li><button onclick="gotoRef('#fontfamilyref');" class="w3-bar-item w3-button">font-family</button></li>
 			<li><button onclick="gotoRef('#fontsizeref');" class="w3-bar-item w3-button">font-size</button></li>
 			<li><button onclick="gotoRef('#heightref');" class="w3-bar-item w3-button">height</button></li>
@@ -94,7 +96,6 @@
 			<li><button onclick="gotoRef('#radiogroupref');" class="w3-bar-item w3-button">radiogroup</button></li>
 			<li><button onclick="gotoRef('#redirectref');" class="w3-bar-item w3-button">redirect</button></li>
 			<li><button onclick="gotoRef('#selectedref');" class="w3-bar-item w3-button">selected</button></li>
-			<li><button onclick="gotoRef('#sidebartyperef');" class="w3-bar-item w3-button">sidebar-type</button></li>
 			<li><button onclick="gotoRef('#srcref');" class="w3-bar-item w3-button">src</button></li>
 			<li><button onclick="gotoRef('#tableattrsref');" class="w3-bar-item w3-button">table-attrs</button></li>
 			<li><button onclick="gotoRef('#textalignref');" class="w3-bar-item w3-button">text-align</button></li>
@@ -113,6 +114,29 @@
 	
 	<div id="main" class="w3-pane">
 		<!-- TABLE ############################################################################################# -->
+		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
+			<tr id="tableHeader">
+				<th style="width:20%;">Element</th>
+				<th style="width:40%;">Description</th>
+				<th style="width:40%;">Example of use</th>
+			</tr>
+			<tr>
+				<td>Comments</td>
+				<td><div class="descriptionCell">All comments start with the double character '--'</div></td>
+				<td><div class="codeStyle">-- This is a comment.</div></td>
+			</tr>
+			<tr>
+				<td>Break lines</td>
+				<td><div class="descriptionCell">All lines finished with the character '\' are joined with the following line, ignoring initial blanks. This is valid for everything, not only comments.</div></td>
+				<td><div class="codeStyle">text: "example of \<br><div style="margin-left:30px;">multiline text"<div></div></td>
+			</tr>
+			<tr>
+				<td>Icons</td>
+				<td><div class="descriptionCell">You can include icons inside a text by writting the name of one of the avaible icons inside keys {ic_name}. 
+				List of avaible icons in <a href="https://material.io/icons/">https://material.io/icons/</a></div></td>
+				<td><div class="codeStyle">text: "This is a like {thum_up} and this is a fav {favorite}"</div></td>
+			</tr>
+		</table>
 		<table class="w3-table w3-striped w3-bordered w3-centered notranslate">
 			<tr id="tableHeader">
 				<th style="width:20%;">Special tags</th>
@@ -230,6 +254,14 @@
 				</div></td>
 			</tr>
 			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#htmlref');">html</button></td>
+				<td><div class="descriptionCell">Allows to use custom html fragments of code.</div></td>
+				<td><div class="codeStyle">
+					<button class="buttonlist">open</button>, 
+					<button class="buttonlist">close</button>
+				</div></td>
+			</tr>
+			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#modalref');">modal</button></td>
 				<td><div class="descriptionCell">This container shows the content in a pop-up window.</div></td>
 				<td><div class="codeStyle">
@@ -311,7 +343,6 @@
 					<button class="buttonlist" onclick="gotoRef('#borderref');">border</button>, 
 					<button class="buttonlist" onclick="gotoRef('#bordercolorref');">border-color</button>, 
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
-					<button class="buttonlist" onclick="gotoRef('#collapsiblerev');">collapsible</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
@@ -321,7 +352,6 @@
 					<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 					<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
 					<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-					<button class="buttonlist" onclick="gotoRef('#sidebartyperef');">sidebar-type</button>, 
 					<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 				</div></td>
 			</tr>
@@ -541,6 +571,8 @@
 					<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 					<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 					<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+					<button class="buttonlist" onclick="gotoRef('#filterdropdownref');">filter-dropdown</button>,
+					<button class="buttonlist" onclick="gotoRef('#filtertableref');">filter-table</button>,
 					<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
 					<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 					<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
@@ -646,11 +678,6 @@
 				<td><div class="codeStyle">"8859", "ansi", "ascii", "utf-8"</div></td>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#collapsibleref');">collapsible</button></td>
-				<td><div class="descriptionCell">Set the sidebar as collapsible or fixed.</div></td>
-				<td><div class="codeStyle">true, flase</div></td>
-			</tr>
-			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#classref');">class</button></td>
 				<td><div class="descriptionCell">Shared identifier to apply styles or looking for the component.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -679,6 +706,16 @@
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#elevationref');">elevation</button></td>
 				<td><div class="descriptionCell">Simulates the elevation of a component over the page.</div></td>
 				<td><div class="codeStyle"><i>[number]</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#filterdropdownref');">filter-dropdown</button></td>
+				<td><div class="descriptionCell">Filters the items of a dropdown.</div></td>
+				<td><div class="codeStyle"><i>"dropdownId"</i></div></td>
+			</tr>
+			<tr>
+				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#filtertableref');">filter-table</button></td>
+				<td><div class="descriptionCell">Filters the rows of a table by the specified col. Row numeration starts from 1.</div></td>
+				<td><div class="codeStyle"><i>[colNumber] "tableId"</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#fontfamilyref');">font-family</button></td>
@@ -779,11 +816,6 @@
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#selectedref');">selected</button></td>
 				<td><div class="descriptionCell">Specifies if the radiobutton or checkbox must be displayed as selected when is loaded.</div></td>
 				<td><div class="codeStyle">true, false</div></td>
-			</tr>
-			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#sidebartyperef');">sidebar-type</button></td>
-				<td><div class="descriptionCell">Specifies if the sidebar displace all the content to fit into the page or is displayed over the content when is shown.</div></td>
-				<td><div class="codeStyle">floating, sliding</div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#srcref');">src</button></td>
@@ -963,6 +995,20 @@
 				</div>
 			</li>
 			<li>
+				<div id="htmlref" class="w3-container content_it">
+					<h2>html</h2>
+					<p>Allows to use custom html fragments of code.</p>
+					<p>In open tag you can write all your html. You may leave unclosed some tags. Then, you can put
+					all the webpl code you want. Finally you MUST close all unclosed tags in the 'open' part.</p>
+					<div class="w3-code">
+						html:<br>
+						<i class="tab">open: "&ltdiv&gt&ltbutton&gtmyButton&lt/button&gt&ltdiv&gt"</i><br>
+						<i class="tab">[tags]</i><br>
+						<i class="tab">close: "&lt/div&gt&lt/div&gt"</i>
+					</div>
+				</div>
+			</li>
+			<li>
 				<div id="modalref" class="w3-container content_it">
 					<h2>modal</h2>
 					<p>This container shows the content in a pop-up window.</p>
@@ -1101,8 +1147,7 @@
 						<button class="buttonlist" onclick="gotoRef('#linkref');">link</button>, 
 						<button class="buttonlist" onclick="gotoRef('#marginref');">margin</button>, 
 						<button class="buttonlist" onclick="gotoRef('#onclickref');">onclick</button>, 
-						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>, 
-						<button class="buttonlist" onclick="gotoRef('#sidebartyperef');">sidebar-type</button>, 
+						<button class="buttonlist" onclick="gotoRef('#paddingref');">padding</button>,  
 						<button class="buttonlist" onclick="gotoRef('#widthref');">width</button>
 					</div>
 				</div>
@@ -1394,6 +1439,8 @@
 						<button class="buttonlist" onclick="gotoRef('#borderradiusref');">border-radius</button>, 
 						<button class="buttonlist" onclick="gotoRef('#classref');">class</button>, 
 						<button class="buttonlist" onclick="gotoRef('#effectref');">effect</button>, 
+						<button class="buttonlist" onclick="gotoRef('#filterdropdownref');">filter-dropdown</button>,
+						<button class="buttonlist" onclick="gotoRef('#filtertableref');">filter-table</button>,
 						<button class="buttonlist" onclick="gotoRef('#fontfamilyref');">font-family</button>, 
 						<button class="buttonlist" onclick="gotoRef('#fontsizeref');">font-size</button>, 
 						<button class="buttonlist" onclick="gotoRef('#elevationref');">elevation</button>, 
@@ -1561,19 +1608,6 @@
 				</div>
 			</li>
 			<li>
-				<div id="collapsibleref" class="w3-container content_it">
-					<h2>collapsible</h2>
-					<p>Set the sidebar as collapsible or fixed.</p>
-					<div class="w3-code">
-						collapsible: <i>[value]</i>
-					</div>
-					<h4>Values</h4>
-					<div class="codeStyle">
-						true, false			
-					</div>
-				</div>
-			</li>
-			<li>
 				<div id="classref" class="w3-container content_it">
 					<h2>class</h2>
 					<p>Shared identifier to apply styles or looking for the component.</p>
@@ -1636,6 +1670,24 @@
 					<p>Simulates the elevation of a component over the page.</p>
 					<div class="w3-code">
 						elevation: <i>[number]</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="filterdropdownref" class="w3-container content_it">
+					<h2>filter-dropdown</h2>
+					<p>Filters the items of a dropdown.</p>
+					<div class="w3-code">
+						filter-dropdown: <i>"dropdownId"</i>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="filtertableref" class="w3-container content_it">
+					<h2>filter-table</h2>
+					<p>Filters the rows of a table by the specified col. Row numeration starts from 1.</p>
+					<div class="w3-code">
+						filter-table: <i>3 "tableId"</i>
 					</div>
 				</div>
 			</li>
@@ -1842,19 +1894,6 @@
 					<h4>Values</h4>
 					<div class="codeStyle">
 						true, false				
-					</div>
-				</div>
-			</li>
-			<li>
-				<div id="sidebartyperef" class="w3-container content_it">
-					<h2>sidebar-type</h2>
-					<p>Specifies if the sidebar displace all the content to fit into the page or is displayed over the content when is shown.</p>
-					<div class="w3-code">
-						sidebar-type: <i>[value]</i>
-					</div>
-					<h4>Values</h4>
-					<div class="codeStyle">
-						floating, sliding				
 					</div>
 				</div>
 			</li>

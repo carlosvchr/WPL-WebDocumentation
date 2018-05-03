@@ -5,9 +5,9 @@ var itsearch = ["import", "include", "define",
 			"accordion", "dropdown", "hbox", "modal", "sidebar", "table", "vbox",
 			"audio", "button", "checkbox", "image", "label", "radiobutton", "textfield", "video",
 			"align", "alt", "animation", "autoplay", "bgcolor", "border", "border-color", "border-radius",
-			"class", "controls", "dropdown-type", "effect", "elevation", "font-family", "font-size", "collapsible",
-			"height", "id", "link", "loop",	"margin", "muted", "onchange", "onclick", "padding", "placeholder", 
-			"poster", "preload", "radiogroup", "row", "row-header", "selected", "sidebar-type", "src",  
+			"class", "controls", "dropdown-type", "effect", "elevation", "filter-dropdown", "filter-table", 
+			"font-family", "font-size", "height", "html", "id", "link", "loop",	"margin", "muted", "onchange", "onclick",
+			 "padding", "placeholder", "poster", "preload", "radiogroup", "row", "row-header", "selected", "src",  
 			"text-align", "text-color", "text-decoration", "tooltip", "width"];
 
 
