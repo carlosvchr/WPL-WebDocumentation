@@ -5,23 +5,39 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
 		body { text-align:center; }
-		#maincontainer { width:100%; }
-		#codetable{
-			width:80%;
-			max-width: 800px;
-			margin:0 auto;
-		}
+		td{ width:50%; }
+		#maincontainer { width:100%; margin-bottom:40px; }
+		#codetable{	width:80%; max-width: 800px; margin:0 auto;	}
+		#searcher{ width: 300px;	margin:0 auto; margin-bottom:18px; }
 		@media screen and (max-width: 600px) {
-			#codetable {
-				width:100%;
-			}
+			#codetable{	width:100%; }
 		}
 	</style>
+	<script>
+		function searchCode() {
+			var input, filter, table, tr, td, i;
+			input = document.getElementById("searcher");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("codetable");
+			tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[0];
+				if (td) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
 </head>
 <body>
 	<h1>ISO 639-1 Language Codes</h1>
 	<div id="maincontainer">
-		<table id="codetable" class="w3-table-all notranslate">
+		<input class="w3-input w3-border w3-padding" type="text" placeholder="Search ISO code.." id="searcher" onkeyup="searchCode()">
+		<table id="codetable" class="w3-table-all w3-centered notranslate">
 			<tr><th>Language</th><th>ISO Code</th></tr>
 			<tr><td>Abkhazian</td><td>ab</td></tr>
 			<tr><td>Afar</td><td>aa</td></tr>
