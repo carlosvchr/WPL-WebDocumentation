@@ -13,7 +13,7 @@
 	<header>
 		<div id="headerin">
 			<button id="openNav" class="w3-button w3-xlarge w3-round w3-hover-teal" onclick="w3_toggleOpen()">&#9776;</button>
-			<h1 id="headerTitle">WebPL Documentation Pages</h1>
+			<h1 id="headerTitle"><image src="logo_wpl.svg" style="height:48px; padding-bottom:5px;"></image> Documentation Pages</h1>
 			<input class="w3-input w3-padding" list="searchlist" placeholder="Search.." id="searchbox" onkeyup="setSearchboxItems()">
 			<button id="searchboxbtn" onclick="searchboxFind()" class="w3-button material-icons searchbtnicon">search</button>
 			<datalist id="searchlist"></datalist>
@@ -58,7 +58,6 @@
 
 		<h4 class="w3-bar-item">Attributes</h4>
 		<ul class="w3-ul w3-hoverable">
-			<li><button onclick="gotoRef('#alignref');" class="w3-bar-item w3-button">align</button></li>
 			<li><button onclick="gotoRef('#altref');" class="w3-bar-item w3-button">alt</button></li>
 			<li><button onclick="gotoRef('#animationref');" class="w3-bar-item w3-button">animation</button></li>
 			<li><button onclick="gotoRef('#authorref');" class="w3-bar-item w3-button">author</button></li>
@@ -160,7 +159,7 @@
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#defineref');">define</button></td>
 				<td><div class="descriptionCell">Allows to define custom tags.</div></td>
-				<td><div class="codeStyle"><i>[identifier "text"]</i></div></td>
+				<td><div class="codeStyle"><i>[$identifier [val]] val: #ff0000, "text", 250px, 16</i></div></td>
 			</tr>
 			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#importref');">import</button></td>
@@ -628,11 +627,6 @@
 				<th style="width:40%;">Values</th>
 			</tr>
 			<tr>
-				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#alignref');">align</button></td>
-				<td><div class="descriptionCell">Specifies where the element will be positioned.</div></td>
-				<td><div class="codeStyle">top, right, bottom, left, top-right, top-left, bottom-right, bottom-left, center</div></td>
-			</tr>
-			<tr>
 				<td><button class="buttonlist tagCodeStyle" onclick="gotoRef('#altref');">alt</button></td>
 				<td><div class="descriptionCell">Specifies an alternative text when the image cannot be visualized.</div></td>
 				<td><div class="codeStyle"><i>"text"</i></div></td>
@@ -867,13 +861,17 @@
 					<p>Allows to create global constants.</p>
 					<p>To access it, the identifier must be preceded by $ symbol.</p>
 					<div class="w3-code">
-						define: <i>identifier "html code"</i>
+						define: <i>$identifier [val]</i>
 					</div>
 					<h4>Example</h4>
 					<div class="w3-code">
-						define: <i>mainColor #ff0000</i><br>
+						define: <i>$mainColor #ff0000</i><br>
+						define: <i>$customWidth 640px</i></br>
+						define: <i>$someText "Some text"</i></br>
 						hbox:<br>
-						<span class="tab">background-color: $mainColor</span>
+						<span class="tab">background-color: $mainColor</span></br>
+						<span class="tab">width: $customWidth</span></br>
+						<span class="tab">label: $someText</span>
 					</div>
 				</div>
 			</li>
@@ -1497,19 +1495,6 @@
 					</div>
 				</div>
 			</li>		
-			<li>
-				<div id="alignref" class="w3-container content_it">
-					<h2>align</h2>
-					<p>Specifies where the element will be positioned.</p>
-					<div class="w3-code">
-						align: <i>[value]</i>
-					</div>
-					<h4>Values</h4>
-					<div class="codeStyle">
-						top, right, bottom, left, top-right, top-left, bottom-right, bottom-left, center						
-					</div>
-				</div>
-			</li>	
 			<li>
 				<div id="altref" class="w3-container content_it">
 					<h2>alt</h2>
